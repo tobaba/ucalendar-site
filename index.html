@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UCalendar — 任务栏上的日历 · 会动手的 AI 小秘书</title>
-<meta name="description" content="Windows 桌面日历小组件 + AI 小秘书：一句话建日程，9 个桌面组件、12 套主题，8 MB 单文件，数据全在本机。">
+<meta name="description" content="Windows 桌面日历小组件 + AI 小秘书：一句话建日程，9 个桌面组件、14 套主题，8 MB 单文件，数据全在本机。">
 <meta name="theme-color" content="#07060c">
 <link rel="canonical" href="https://tobaba.github.io/ucalendar-site/">
 <meta property="og:type" content="website">
@@ -82,6 +82,19 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   border:1px solid var(--line2);font-size:13px;color:var(--text);transition:.25s var(--ease)}
 .gh:hover{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft);transform:translateY(-1px)}
 
+/* ---------- from-lite ---------- */
+.from-lite{position:relative;z-index:3;width:min(1160px,92vw);margin:18px auto 0}
+.from-lite[hidden]{display:none}
+.fl-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:13px 18px;border-radius:16px;
+  border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));
+  background:linear-gradient(100deg,color-mix(in srgb,var(--accent) 14%,transparent),color-mix(in srgb,var(--accent2) 7%,transparent));
+  box-shadow:0 20px 50px -36px var(--accent)}
+.fl-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);flex:none}
+.fl-in p{margin:0;font-size:13px;color:var(--muted);line-height:1.5}
+.fl-in b{color:var(--text);font-weight:600}
+.fl-in a{margin-left:auto;font-size:12.5px;font-weight:600;color:var(--accent);white-space:nowrap}
+.fl-in a:hover{text-decoration:underline;text-underline-offset:4px}
+
 /* ---------- layout ---------- */
 .wrap{width:min(1160px,92vw);margin-inline:auto;position:relative;z-index:2}
 section{position:relative;z-index:2}
@@ -109,6 +122,10 @@ section{position:relative;z-index:2}
 .btn.primary small{font-weight:600;opacity:.62;font-size:11.5px;letter-spacing:.04em}
 .btn.ghost{border:1px solid var(--line2);color:var(--text)}
 .btn.ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+.ed-note{font-size:12px;color:var(--dim);margin:12px 0 0}
+.src-link{align-self:center;margin-left:4px;font-size:12px;color:var(--dim);border-bottom:1px solid transparent;transition:.2s}
+.src-link:hover{color:var(--text);border-color:var(--line2)}
 
 .theme-pick{display:flex;align-items:center;gap:10px;margin-top:30px;color:var(--dim);font-size:12px;letter-spacing:.16em;font-family:ui-monospace,Consolas,monospace}
 .dot{width:22px;height:22px;border-radius:50%;border:1px solid rgba(255,255,255,.22);position:relative;transition:.25s var(--ease)}
@@ -242,6 +259,82 @@ section{position:relative;z-index:2}
 .stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:8px}
 .stat i{display:block;font-style:normal;font-family:ui-monospace,Consolas,monospace;font-size:10px;color:var(--dim);letter-spacing:.18em;margin-top:4px}
 
+/* ---------- editions ---------- */
+#editions{padding:clamp(56px,9vh,110px) 0 0;scroll-margin-top:96px}
+#features,#showcase,#editions,#download{scroll-margin-top:90px}
+.editions{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);gap:14px;align-items:stretch}
+.ed{position:relative;display:flex;flex-direction:column;border-radius:26px;border:1px solid var(--line2);padding:clamp(22px,3vw,32px);overflow:hidden;
+  background:linear-gradient(170deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  transition:transform .35s var(--ease),border-color .35s,box-shadow .35s}
+.ed:hover{transform:translateY(-4px)}
+.ed.full{border-color:color-mix(in srgb,var(--accent) 45%,var(--line2));box-shadow:0 46px 100px -58px var(--accent);
+  background:
+    radial-gradient(90% 80% at 100% 0,color-mix(in srgb,var(--accent) 26%,transparent),transparent 62%),
+    radial-gradient(70% 70% at 0 100%,color-mix(in srgb,var(--accent2) 13%,transparent),transparent 62%),
+    linear-gradient(165deg,#151029,#090711)}
+.ed.full::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;opacity:.72;
+  background:linear-gradient(135deg,var(--accent),transparent 42%,var(--accent2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.ed.lite{background:linear-gradient(170deg,rgba(255,255,255,.035),rgba(255,255,255,.008))}
+.ed-badge{align-self:flex-start;font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 10px;border-radius:99px;border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+  color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.ed.full .ed-badge{display:inline-flex;align-items:center;gap:6px}
+.ed.full .ed-badge::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 9px var(--accent);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.72)}}
+.ed.lite .ed-badge{color:var(--muted);border-color:var(--line2);background:rgba(255,255,255,.03)}
+.ed h3{font-size:clamp(24px,2.6vw,34px);line-height:1.05;letter-spacing:-.03em;margin:20px 0 6px}
+.ed h3 span{background:linear-gradient(96deg,#fff 10%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.ed.lite h3 span{background-image:linear-gradient(96deg,#fff 10%,var(--accent2))}
+.ed-spec{font-family:ui-monospace,Consolas,monospace;font-size:11.5px;letter-spacing:.1em;color:var(--dim);margin:0 0 22px}
+.ed.full .ed-spec{color:color-mix(in srgb,var(--accent) 75%,var(--muted))}
+.ed-list{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.ed-list li{position:relative;padding-left:24px;font-size:13.5px;color:var(--muted)}
+.ed-list li::before{content:"✓";position:absolute;left:0;top:0;font-size:11px;color:var(--accent);font-weight:700}
+.ed-list li.off{color:var(--dim)}
+.ed-list li.off::before{content:"—";color:var(--dim);font-weight:400}
+.ed-cta{margin-top:auto;padding-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.ed-fine{font-size:11.5px;color:var(--dim);margin:14px 0 0;line-height:1.65}
+.vs{position:relative;isolation:isolate;display:grid;place-items:center;align-self:center;width:54px;height:54px;border-radius:50%;
+  font-family:ui-monospace,Consolas,monospace;font-size:11px;letter-spacing:.08em;color:var(--text);
+  border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line2));
+  background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.12),transparent 60%),#0a0813;
+  box-shadow:0 0 0 8px color-mix(in srgb,var(--bg) 70%,transparent),0 0 26px -6px var(--accent)}
+.vs::before{content:"";position:absolute;inset:-7px;border-radius:50%;z-index:-1;filter:blur(7px);opacity:.5;
+  background:conic-gradient(from 0deg,transparent 0deg,var(--accent) 70deg,transparent 140deg,var(--accent2) 240deg,transparent 330deg);
+  animation:spin 9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.compare{margin-top:18px;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  background:linear-gradient(170deg,rgba(255,255,255,.035),rgba(255,255,255,.01))}
+.cmp-head,.cmp-row{display:grid;grid-template-columns:1.5fr .85fr .95fr;align-items:center;gap:12px;padding:13px clamp(16px,2.6vw,26px)}
+.cmp-head{font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;
+  border-bottom:1px solid var(--line);background:rgba(0,0,0,.18)}
+.cmp-row{border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.cmp-row:last-child{border-bottom:0}
+.cmp-row>span{color:var(--text)}
+.cmp-row i{font-style:normal;color:var(--dim)}
+.cmp-row b{font-weight:600;color:var(--text)}
+.cmp-row .hot{color:var(--accent)}
+.cmp-head .hot{color:var(--accent)}
+.roadmap{margin-top:18px;border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3vw,28px);
+  background:
+    radial-gradient(70% 120% at 100% 0,color-mix(in srgb,var(--accent2) 10%,transparent),transparent 60%),
+    linear-gradient(170deg,rgba(255,255,255,.03),rgba(255,255,255,.008))}
+.rd-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin-bottom:20px}
+.rd-head h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.rd-head .mono{font-size:10px;color:var(--accent);letter-spacing:.2em}
+.rd-head a{margin-left:auto;font-size:12px;color:var(--muted);border-bottom:1px solid var(--line2);transition:.2s}
+.rd-head a:hover{color:var(--text);border-color:var(--accent)}
+.rd-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rd-k{display:inline-flex;align-items:center;gap:7px;font-family:ui-monospace,Consolas,monospace;font-size:10px;letter-spacing:.18em;color:var(--dim);margin-bottom:10px}
+.rd-k::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--dim);box-shadow:0 0 10px var(--dim)}
+.rd-k.next{color:var(--accent)}
+.rd-k.next::before{background:var(--accent);box-shadow:0 0 12px var(--accent)}
+.rd-grid ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.rd-grid li{font-size:12px;color:var(--muted);padding:6px 10px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.rd-note{font-size:11.5px;color:var(--dim);margin:18px 0 0}
+
 /* ---------- download ---------- */
 .download{padding:clamp(40px,7vh,80px) 0 clamp(60px,10vh,120px)}
 .dl-card{position:relative;border-radius:28px;border:1px solid var(--line2);overflow:hidden;
@@ -283,6 +376,10 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
   .panel{transform:none}
   .bubble{right:0}
   .grid3{grid-template-columns:1fr}
+  .editions{grid-template-columns:minmax(0,1fr)}
+  .vs{display:none}
+  .rd-grid{grid-template-columns:1fr}
+  .cmp-head,.cmp-row{grid-template-columns:1.2fr .9fr 1fr;gap:8px}
   .stat-row{grid-template-columns:1fr 1fr}
   .stat:nth-child(2){border-right:0}
   .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
@@ -298,6 +395,9 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
   .p-clock{font-size:18px}
   .big{font-size:34px}
   .bubble{right:-2px;bottom:-64px}
+  .cmp-head,.cmp-row{grid-template-columns:1.1fr .9fr 1fr;font-size:12px;padding:11px 14px}
+  .cmp-head{font-size:9px;letter-spacing:.1em}
+  .fl-in a{margin-left:0}
   .hero-art{max-width:100%}
 }
 @media (prefers-reduced-motion:reduce){
@@ -321,10 +421,19 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
   <nav aria-label="页面导航">
     <a href="#features">功能</a>
     <a href="#showcase">界面</a>
+    <a href="#editions">版本</a>
     <a href="#download">下载</a>
   </nav>
   <a class="gh mono" href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">GITHUB ↗</a>
 </header>
+
+<aside class="from-lite" id="fromLite" hidden>
+  <div class="fl-in">
+    <span class="fl-dot" aria-hidden="true"></span>
+    <p><b>你在用 UCalendar Lite</b> — Pro 会继续加入新组件、新主题与新布局能力；Lite 现有功能仍长期可用。</p>
+    <a href="#editions">看看两个版本的差异 →</a>
+  </div>
+</aside>
 
 <main id="top">
   <section class="hero">
@@ -334,9 +443,11 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
       <p class="lede">任务栏上的日历 · <span>会动手的</span> AI 小秘书</p>
       <p class="sub">8 MB 单文件，双击即用。说一句话日程就建好了；9 个组件住在桌面上；不登录、不订阅、不联网也能用。</p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 <small>v2.1.1 · 8 MB</small></a>
-        <a class="btn ghost" href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">查看源码</a>
+          <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>8 MB</small></a>
+        <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>永久免费</small></a>
+        <a class="src-link mono" href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">源码 ↗</a>
       </div>
+      <p class="ed-note">两个版本数据互通，可随时切换。</p>
       <div class="theme-pick">
         <span>THEME</span>
         <button class="dot d-aurora" data-set="aurora" aria-pressed="true" aria-label="流光 极光紫"></button>
@@ -383,7 +494,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
   <div class="marquee" aria-hidden="true">
     <div class="track" id="marquee">
       <span>一句话建日程<i></i></span><span>9 个桌面组件<i></i></span><span>农历 · 黄历 · 节气<i></i></span>
-      <span>12 套主题<i></i></span><span>番茄钟 · 专注统计<i></i></span><span>数据全在本机<i></i></span>
+      <span>14 套主题<i></i></span><span>番茄钟 · 专注统计<i></i></span><span>数据全在本机<i></i></span>
       <span>8 MB 绿色版<i></i></span><span>托盘 + 全局热键<i></i></span>
     </div>
   </div>
@@ -428,7 +539,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
           <span class="theme-name" id="themeName">LIUGUANG / 流光</span>
         </div>
         <h3>整个界面一起换</h3>
-        <p>12 套主题，面板、设置、组件、弹窗统一换肤。点上面的色块，这个页面也会跟着变。</p>
+        <p>14 套主题，面板、设置、组件、弹窗统一换肤。点上面的色块，这个页面也会跟着变。</p>
       </article>
     </div>
   </section>
@@ -449,30 +560,105 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
     <div class="stat-row reveal">
       <div class="stat"><b data-count="8">0<small>MB</small></b><span>单文件绿色版</span><i>PORTABLE</i></div>
       <div class="stat"><b data-count="9">0</b><span>个桌面组件</span><i>WIDGETS</i></div>
-      <div class="stat"><b data-count="12">0</b><span>套主题</span><i>THEMES</i></div>
+      <div class="stat"><b data-count="14">0</b><span>套主题</span><i>THEMES</i></div>
       <div class="stat"><b data-count="0">0</b><span>个需要注册的账号</span><i>NO ACCOUNT</i></div>
+    </div>
+  </section>
+
+  <section id="editions" class="wrap">
+    <header class="sec reveal">
+      <span class="num">03</span>
+      <h2>两个版本，同一套数据</h2>
+      <p class="sec-sub">Lite 永久免费，覆盖核心日程；Pro 包含全部组件与主题，并持续加入新能力。选哪个都不折腾。</p>
+    </header>
+
+    <div class="editions">
+      <article class="ed full reveal">
+        <span class="ed-badge">全部功能 · 持续更新</span>
+        <h3>UCalendar<br><span>Pro</span></h3>
+        <p class="ed-spec">9 WIDGETS · 14 THEMES · WORKSPACES</p>
+        <ul class="ed-list">
+          <li>9 个桌面组件，含世界时钟、秒表、时间进度</li>
+          <li>14 套主题，含「流银」「蓝图」与全部配色</li>
+          <li>工作区预设：一键切换整套桌面布局</li>
+          <li>后续新增组件、主题与效率能力持续加入</li>
+        </ul>
+        <div class="ed-cta">
+        <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>8 MB</small></a>
+        </div>
+        <p class="ed-fine">自愿支持获取支持码 · 一次获取，后续新增功能持续加入 · 无订阅</p>
+      </article>
+
+      <div class="vs" aria-hidden="true">VS</div>
+
+      <article class="ed lite reveal">
+        <span class="ed-badge">永久免费</span>
+        <h3>UCalendar<br><span>Lite</span></h3>
+        <p class="ed-spec">6 WIDGETS · 4 THEMES · CORE</p>
+        <ul class="ed-list">
+          <li>6 个核心组件：日程 / 月历 / 天气 / 番茄钟 / 倒计日 / 便签</li>
+          <li>4 套主题：深色 / 浅色 / 护眼 / 粉蓝</li>
+          <li>现有功能长期可用，含兼容与稳定性更新</li>
+          <li class="off">不包含工作区预设与后续扩展功能</li>
+        </ul>
+        <div class="ed-cta">
+          <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>7.8 MB</small></a>
+        </div>
+        <p class="ed-fine">永久免费 · 无广告 · 无账号</p>
+      </article>
+    </div>
+
+    <div class="compare reveal" role="table" aria-label="Lite 与 Pro 功能对比">
+      <div class="cmp-head" role="row"><span role="columnheader">对比项</span><span role="columnheader">LITE</span><span class="hot" role="columnheader">PRO</span></div>
+      <div class="cmp-row" role="row"><span role="cell">桌面组件</span><i role="cell">6 个</i><b class="hot" role="cell">9 个</b></div>
+      <div class="cmp-row" role="row"><span role="cell">主题</span><i role="cell">4 套</i><b class="hot" role="cell">14 套</b></div>
+      <div class="cmp-row" role="row"><span role="cell">工作区预设</span><i role="cell">—</i><b class="hot" role="cell">支持</b></div>
+      <div class="cmp-row" role="row"><span role="cell">后续新增功能</span><i role="cell">不包含</i><b class="hot" role="cell">持续加入</b></div>
+      <div class="cmp-row" role="row"><span role="cell">更新维护</span><i role="cell">兼容与稳定性</i><b class="hot" role="cell">全部功能持续更新</b></div>
+      <div class="cmp-row" role="row"><span role="cell">适合</span><i role="cell">核心功能够用</i><b class="hot" role="cell">想长期跟进</b></div>
+    </div>
+
+    <div class="roadmap reveal">
+      <div class="rd-head">
+        <span class="mono">UPDATES</span>
+        <h3>Pro 一直在长</h3>
+        <a href="https://github.com/tobaba/UCalendar/releases" target="_blank" rel="noopener">更新记录 ↗</a>
+      </div>
+      <div class="rd-grid">
+        <div>
+          <span class="rd-k">最近加入</span>
+          <ul><li>工作区预设</li><li>流银 · 蓝图主题</li><li>倒计日组件</li></ul>
+        </div>
+        <div>
+          <span class="rd-k next">接下来</span>
+          <ul><li>更多桌面组件</li><li>主题包与细节动效</li><li>布局与效率能力</li></ul>
+        </div>
+      </div>
+      <p class="rd-note">更新方向按实际发布为准；Lite 保持现有免费功能长期可用。</p>
     </div>
   </section>
 
   <section id="download" class="wrap download">
     <div class="dl-card reveal">
-      <span class="num mono" style="color:var(--accent);font-size:12px;letter-spacing:.2em">03</span>
-      <h2>放到桌面，今天就开始用</h2>
-      <p>Windows 10 / 11 通用，需要 WebView2 运行时（Win11 与装过 Edge 的系统自带）。数据默认存在 exe 同目录，拷走文件夹就是带走全部数据。</p>
+      <span class="num mono" style="color:var(--accent);font-size:12px;letter-spacing:.2em">04</span>
+      <h2>选好版本，三步开始用</h2>
+      <p>Windows 10 / 11 通用，需要 WebView2 运行时（Win11 与装过 Edge 的系统自带）。数据保存在本机（便携模式在 exe 同目录，否则 <code>%LOCALAPPDATA%\UCalendar</code>），两个版本互通。</p>
       <div class="cta">
-        <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 UCalendar.exe <small>8 MB</small></a>
-        <a class="btn ghost" href="https://github.com/tobaba/UCalendar/releases" target="_blank" rel="noopener">更新记录</a>
+        <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>8 MB</small></a>
+        <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>7.8 MB</small></a>
+        <a class="src-link mono" href="https://github.com/tobaba/UCalendar/releases" target="_blank" rel="noopener">更新记录 ↗</a>
       </div>
       <div class="steps">
-        <div class="step"><b>STEP 01</b><p>下载 exe，双击运行 —— 无需安装，不写注册表。</p></div>
+        <div class="step"><b>STEP 01</b><p>下载对应版本的 exe，双击运行 —— 无需安装，绿色单文件。</p></div>
         <div class="step"><b>STEP 02</b><p>左键点任务栏时钟呼出面板，右键是快捷卡片。</p></div>
         <div class="step"><b>STEP 03</b><p>在 AI 里说一句话，日程就出现在日历上。</p></div>
       </div>
       <p class="note">个人项目未购买代码签名证书，杀毒软件可能提示「未知发布者」；可从 Releases 页核对文件大小。</p>
 
       <div class="faq">
+        <details><summary>Lite 和 Pro 怎么选？</summary><p>只要核心日程、月历、天气、番茄钟、倒计日和便签，选 Lite，永久免费；想要世界时钟、秒表、时间进度、工作区预设和全部主题，并跟上后续新增功能，选 Pro。两个版本数据互通。</p></details>
         <details><summary>不配置 AI 能用吗？</summary><p>能。日历、日程、待办、组件、提醒、主题全部离线可用；AI 需要你自己填 API Key（DeepSeek / OpenAI 兼容 / Claude），只存本机。</p></details>
-        <details><summary>我的数据会联网上传吗？</summary><p>不会。数据在 exe 同目录的 <code>data\</code>（SQLite），删掉 exe 即卸载。AI 请求只发往你配置的服务商。</p></details>
+        <details><summary>我的数据会联网上传吗？</summary><p>不会。数据保存在本机 SQLite（便携目录或 <code>%LOCALAPPDATA%\UCalendar</code>）；删掉 exe 即卸载程序，数据目录可手动删除。AI 请求只发往你配置的服务商。</p></details>
         <details><summary>支持 macOS 吗？</summary><p>源码已支持，可自行构建；目前只提供 Windows 官方构建。</p></details>
       </div>
     </div>
@@ -484,6 +670,7 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
     <span>© <span id="year">2026</span> Tobaba · Windows 桌面工具，一个人做。</span>
     <nav aria-label="页脚链接">
       <a href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/tobaba/ucalendar-lite" target="_blank" rel="noopener">Lite</a>
       <a href="https://github.com/tobaba/UCalendar/issues" target="_blank" rel="noopener">Issues</a>
       <a href="mailto:tobestway@foxmail.com">邮箱</a>
       <a href="https://github.com/tobaba" target="_blank" rel="noopener">主页</a>
@@ -496,6 +683,10 @@ footer{border-top:1px solid var(--line);padding:34px 0 44px;position:relative;z-
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ---- from=lite banner ---- */
+  const fromLite = $('#fromLite');
+  if (fromLite && new URLSearchParams(location.search).get('from') === 'lite') fromLite.hidden = false;
 
   /* ---- theme ---- */
   const THEMES = {
