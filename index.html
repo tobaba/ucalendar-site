@@ -275,7 +275,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="UCalendar 首页">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
-      <b>UCalendar</b><span class="ver">2.6.5</span>
+      <b>UCalendar</b><span class="ver">2.6.6</span>
     </a>
     <nav aria-label="页面导航">
       <a href="#why">为什么改</a>
@@ -371,7 +371,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     </div>
     <figure class="panel-wrap">
       <img src="assets/panel.webp" width="1560" height="1240" alt="UCalendar 主面板真实界面：左侧今日日期、黄历和日程，右侧月历与天气" loading="lazy">
-      <figcaption class="panel-cap"><span><b>同一份数据。</b>主面板改完，桌面上的月历、日程和倒计时也跟着变。</span><span>真实界面 · 2.6.5</span></figcaption>
+      <figcaption class="panel-cap"><span><b>同一份数据。</b>主面板改完，桌面上的月历、日程和倒计时也跟着变。</span><span>真实界面 · 2.6.6</span></figcaption>
     </figure>
   </section>
 
@@ -379,32 +379,40 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     <div class="sec-head">
       <div>
         <div class="kicker">03 / 这次更新</div>
-        <h2 id="update-title">2.6.5：项目、黄历<br>和更清楚的 Pro 边界。</h2>
+        <h2 id="update-title">2.6.6：日历三视图、组件吸附<br>和更顺手的 Pro 外观。</h2>
       </div>
-      <p class="lead">项目能按阶段推进，黄历能查到 1900–2100；哪些功能属于 Pro，界面、后端和发布说明都写清楚。</p>
+      <p class="lead">同一张桌面日历可切完整月历 / 周视图 / 焦点视图；组件拖动实时吸附，Pro 外观一次应用到全部。AI 会话导出也改成另存为，不再直接落盘。</p>
     </div>
     <div class="updates">
       <article class="update">
-        <span class="tag">PROJECTS</span>
-        <h3>项目阶段</h3>
-        <p>项目、阶段、日程 / 待办归属；月历项目条、项目页时间轴、阶段到期提醒；点项目条直达对应项目窗口。</p>
+        <span class="tag">CALENDAR VIEWS</span>
+        <h3>日历三视图</h3>
+        <p>完整月历看全局，周视图看时间网格，焦点视图只看选中日；宽窗自动铺开，窄窗收成周议程，设置内一键切换。</p>
       </article>
       <article class="update">
-        <span class="tag">ALMANAC</span>
-        <h3>黄历 / 吉日</h3>
-        <p>独立黄历与吉日窗，1900–2100 宜忌和释义全部离线；吉日可直接加日程，或写进项目阶段。</p>
+        <span class="tag">WIDGET STYLE</span>
+        <h3>Pro 组件外观</h3>
+        <p>磨砂玻璃、字体、字号、文字颜色都能调；「应用到全部」统一所有组件，「恢复当前 / 恢复全部」只重置尺寸与外观。</p>
       </article>
       <article class="update">
-        <span class="tag">BOUNDARY</span>
-        <h3>Pro 边界</h3>
-        <p>项目管理与便签管理为 Pro；Lite 保留桌面便签 / 快速记录。到期后后端拒绝管理操作，已有项目关联不会被清除。</p>
+        <span class="tag">DRAG SNAP</span>
+        <h3>拖动吸附</h3>
+        <p>拖动时实时吸附屏幕边缘、组件边缘和中线，松手保持；按住 Shift 临时关闭，增加脱手余量，不在阈值附近来回跳。</p>
       </article>
       <article class="update">
-        <span class="tag">INSTALL</span>
-        <h3>WebView2 与签名</h3>
-        <p>首次启动缺 WebView2 会自动下载安装；Pro 与 Lite 都已代码签名，失败时给出手动下载地址。</p>
+        <span class="tag">EXPORT / INSTALL</span>
+        <h3>导出与安装确认</h3>
+        <p>AI 会话导出改为系统另存为，可取消；缺 WebView2 时先询问用户，安装界面可见，不再静默安装。</p>
       </article>
     </div>
+    <figure class="panel-wrap">
+      <img src="assets/calendar-views.webp" width="1500" height="650" alt="UCalendar 桌面日历三种显示模式：完整月历、周视图、焦点视图" loading="lazy">
+      <figcaption class="panel-cap"><span><b>三种看法。</b>完整月历看全局，周视图看时间，焦点视图只看今天。</span><span>真实界面 · 2.6.6</span></figcaption>
+    </figure>
+    <figure class="panel-wrap" style="max-width:640px;margin-left:auto;margin-right:auto">
+      <img src="assets/widget-settings.webp" width="650" height="700" alt="UCalendar 组件设置：显示模式、拖动吸附、Pro 卡片外观、应用到全部、恢复当前 / 全部" loading="lazy">
+      <figcaption class="panel-cap"><span><b>设置里一次调好。</b>显示模式、吸附提示、Pro 外观与恢复全部。</span><span>真实界面 · 2.6.6</span></figcaption>
+    </figure>
     <p class="gallery-note">完整更新记录在 <a href="https://github.com/tobaba/UCalendar/releases" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid rgba(196,71,45,.35)">GitHub Releases ↗</a>。</p>
   </section>
 
@@ -607,7 +615,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       </details>
       <details>
         <summary>Lite 有日迹和时间册吗？</summary>
-        <p>Lite v2.6.5 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
+        <p>Lite v2.6.6 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
       </details>
       <details>
         <summary>数据会上传吗？</summary>
