@@ -86,7 +86,7 @@ section[id]{scroll-margin-top:76px}
 h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em}
 h1{font-size:clamp(46px,6.2vw,82px);line-height:1.06;margin:20px 0 24px;letter-spacing:-.035em}
 h1 em{font-style:normal;color:var(--accent)}
-h2{font-size:clamp(30px,4vw,50px);line-height:1.18;margin:14px 0 0}
+h2{font-size:clamp(30px,3.6vw,46px);line-height:1.2;margin:14px 0 0;text-wrap:balance}
 h3{font-size:21px;line-height:1.35;margin:0}
 .lead{font-size:17px;line-height:1.9;color:var(--muted);max-width:640px}
 
@@ -129,7 +129,7 @@ h3{font-size:21px;line-height:1.35;margin:0}
 
 /* sections */
 section{padding:76px 0;border-top:1px solid var(--line)}
-.sec-head{display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:end;margin-bottom:34px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:end;margin-bottom:34px}
 .sec-head .lead{margin:0 0 4px;font-size:16px}
 
 /* pain */
@@ -161,10 +161,9 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 .update .more{display:inline-block;margin-top:14px;font:11.5px var(--mono);color:var(--accent);border-bottom:1px solid rgba(196,71,45,.35)}
 
 /* gallery */
-.gallery{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 14px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;-webkit-overflow-scrolling:touch}
-.gallery::-webkit-scrollbar{height:6px}
-.gallery::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:999px}
-.widget-card{flex:0 0 340px;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.34)}
+.gallery{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gallery::-webkit-scrollbar{display:none}
+.widget-card{flex:0 0 340px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.34)}
 .widget-card img{width:100%;height:400px;object-fit:contain;object-position:top;display:block;background:var(--dark)}
 .widget-meta{flex:1;padding:14px 16px 16px}
 .widget-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:5px}
@@ -270,6 +269,9 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
+  .gallery{scrollbar-width:thin}
+  .gallery::-webkit-scrollbar{display:block;height:6px}
+  .gallery::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:999px}
 }
 </style>
 </head>
@@ -383,7 +385,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     <div class="sec-head">
       <div>
         <div class="kicker">03 / 这次更新</div>
-        <h2 id="update-title">2.7.2：28 套主题、微信机器人<br>和更稳的写入。</h2>
+        <h2 id="update-title">2.7.2：28 套主题、<br>微信机器人和稳定写入</h2>
       </div>
       <p class="lead">2.7.0 带来主题外观、字体和微信机器人；2.7.1–2.7.2 继续修交互与写入稳定性。2.6.6 的日历三视图保留在下面。</p>
     </div>
@@ -420,7 +422,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     <div class="sec-head">
       <div>
         <div class="kicker">04 / 九个组件</div>
-        <h2 id="widgets-title">九个组件，<br>都是会跟着日程变的那一种。</h2>
+        <h2 id="widgets-title">九个组件，<br>都会跟着日程变。</h2>
       </div>
       <p class="lead">不是九个静态展示卡。它们读同一份日程和待办；你在主面板改，桌面上的组件也跟着变。</p>
     </div>
@@ -489,7 +491,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         </div>
       </article>
     </div>
-    <p class="gallery-note"><b>横向滚动查看全部 9 个 →</b> 组件不是钉死的。支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 9 个。</p>
+    <p class="gallery-note"><b>鼠标移入自动滚动</b> · 手机左右滑动 · 共 9 个。组件不是钉死的，支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 9 个。</p>
   </section>
 
   <section class="wrap" aria-labelledby="boundary-title">
@@ -647,5 +649,61 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   </div>
 </footer>
 
+<script>
+(() => {
+  const gallery = document.querySelector('.gallery');
+  if (!gallery) return;
+  if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let raf = 0;
+  let last = 0;
+  let dir = 1;
+  let resume = 0;
+  const speed = 2;
+
+  const step = (now) => {
+    const dt = last ? Math.min(now - last, 32) : 16.7;
+    last = now;
+    const max = gallery.scrollWidth - gallery.clientWidth;
+    if (max > 0) {
+      gallery.scrollLeft += (dir * speed * dt) / 16.7;
+      if (gallery.scrollLeft >= max - 1) dir = -1;
+      else if (gallery.scrollLeft <= 1) dir = 1;
+    }
+    raf = requestAnimationFrame(step);
+  };
+
+  const start = () => {
+    if (raf) return;
+    last = 0;
+    raf = requestAnimationFrame(step);
+  };
+
+  const stop = () => {
+    if (!raf) return;
+    cancelAnimationFrame(raf);
+    raf = 0;
+  };
+
+  gallery.addEventListener('mouseenter', start);
+  gallery.addEventListener('mouseleave', () => {
+    clearTimeout(resume);
+    stop();
+  });
+  gallery.addEventListener('pointerdown', stop);
+  gallery.addEventListener('focusin', stop);
+  gallery.addEventListener('wheel', () => {
+    stop();
+    clearTimeout(resume);
+    resume = setTimeout(() => {
+      if (gallery.matches(':hover')) start();
+    }, 1500);
+  }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+  });
+})();
+</script>
 </body>
 </html>
