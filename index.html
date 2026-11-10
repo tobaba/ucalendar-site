@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UCalendar — 日历最难的，不是看，是改。</title>
-<meta name="description" content="UCalendar：Windows 桌面日历 + AI 秘书。项目阶段、黄历吉日、日程待办放在同一张桌面；9 个桌面组件、21 套主题、本地 SQLite。Lite 也有 AI 与桌面便签。">
+<meta name="description" content="UCalendar：Windows 桌面日历 + AI 秘书。项目阶段、黄历吉日、日程待办放在同一张桌面；9 个桌面组件、28 套主题、本地 SQLite。Lite 也有 AI 与桌面便签。">
 <meta name="theme-color" content="#f4efe5">
 <link rel="canonical" href="https://tobaba.github.io/ucalendar-site/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="UCalendar — 日历最难的，不是看，是改。">
-<meta property="og:description" content="项目阶段、黄历吉日、日程待办；9 个桌面组件、21 套主题、本地数据。Lite 也有 AI 与桌面便签。">
+<meta property="og:description" content="项目阶段、黄历吉日、日程待办；9 个桌面组件、28 套主题、本地数据。Lite 也有 AI 与桌面便签。">
 <meta property="og:image" content="https://tobaba.github.io/ucalendar-site/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="UCalendar — 日历最难的，不是看，是改。">
-<meta name="twitter:description" content="项目阶段、黄历吉日、日程待办；9 个桌面组件、21 套主题、本地数据。Lite 也有 AI 与桌面便签。">
+<meta name="twitter:description" content="项目阶段、黄历吉日、日程待办；9 个桌面组件、28 套主题、本地数据。Lite 也有 AI 与桌面便签。">
 <meta name="twitter:image" content="https://tobaba.github.io/ucalendar-site/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23211f1a'/%3E%3Crect x='14' y='16' width='36' height='32' rx='6' fill='none' stroke='%23f4efe5' stroke-width='3'/%3E%3Cpath d='M14 26h36' stroke='%23f4efe5' stroke-width='3'/%3E%3Cpath d='M24 12v8M40 12v8' stroke='%23c4472d' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='37' r='4' fill='%23c4472d'/%3E%3C/svg%3E">
 <style>
@@ -275,7 +275,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="UCalendar 首页">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
-      <b>UCalendar</b><span class="ver">2.6.6</span>
+      <b>UCalendar</b><span class="ver">2.7.2</span>
     </a>
     <nav aria-label="页面导航">
       <a href="#why">为什么改</a>
@@ -298,10 +298,10 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>14 天全功能试用</small></a>
         <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>永久免费</small></a>
       </div>
-      <p class="hero-note">Lite 也有 AI 秘书、黄历吉日和桌面便签；Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、3 个桌面组件、15 套高级主题和工作区。<a href="#how">先看它怎么改 ↓</a></p>
+      <p class="hero-note">Lite 也有 AI 秘书、黄历吉日和桌面便签；Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、3 个桌面组件、22 套高级主题和工作区。<a href="#how">先看它怎么改 ↓</a></p>
       <div class="facts" aria-label="产品事实">
         <span><i></i><b>9</b> 个桌面组件</span>
-        <span><i></i><b>21</b> 套主题</span>
+        <span><i></i><b>28</b> 套主题</span>
         <span><i></i><b>本地</b> SQLite</span>
         <span><i></i><b>Windows</b> 10 / 11</span>
       </div>
@@ -379,30 +379,30 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     <div class="sec-head">
       <div>
         <div class="kicker">03 / 这次更新</div>
-        <h2 id="update-title">2.6.6：日历三视图、组件吸附<br>和更顺手的 Pro 外观。</h2>
+        <h2 id="update-title">2.7.2：28 套主题、微信机器人<br>和更稳的写入。</h2>
       </div>
-      <p class="lead">同一张桌面日历可切完整月历 / 周视图 / 焦点视图；组件拖动实时吸附，Pro 外观一次应用到全部。AI 会话导出也改成另存为，不再直接落盘。</p>
+      <p class="lead">2.7.0 带来主题外观、字体和微信机器人；2.7.1–2.7.2 继续修交互与写入稳定性。2.6.6 的日历三视图和组件外观也保留在下面。</p>
     </div>
     <div class="updates">
       <article class="update">
-        <span class="tag">CALENDAR VIEWS</span>
-        <h3>日历三视图</h3>
-        <p>完整月历看全局，周视图看时间网格，焦点视图只看选中日；宽窗自动铺开，窄窗收成周议程，设置内一键切换。</p>
+        <span class="tag">THEMES</span>
+        <h3>28 套主题</h3>
+        <p>设置新增主题外观画廊，按编号 01–28 一屏看全；支持切换字体与字号。「智核」主面板顶部为翻页时钟。</p>
       </article>
       <article class="update">
-        <span class="tag">WIDGET STYLE</span>
-        <h3>Pro 组件外观</h3>
-        <p>磨砂玻璃、字体、字号、文字颜色都能调；「应用到全部」统一所有组件，「恢复当前 / 恢复全部」只重置尺寸与外观。</p>
+        <span class="tag">WECHAT</span>
+        <h3>微信机器人（Pro）</h3>
+        <p>扫码绑定微信，私聊即可查询 / 增改日程、待办、便签，发图片可交 AI 识别；支持 /pair /today /weather /almanac /news /support 等指令。</p>
       </article>
       <article class="update">
-        <span class="tag">DRAG SNAP</span>
-        <h3>拖动吸附</h3>
-        <p>拖动时实时吸附屏幕边缘、组件边缘和中线，松手保持；按住 Shift 临时关闭，增加脱手余量，不在阈值附近来回跳。</p>
+        <span class="tag">STABILITY</span>
+        <h3>写入稳定性</h3>
+        <p>修复数据库繁忙时可能提示 database is locked 的问题；优化日程、待办、便签、项目、回收站和 ICS 导入等写入路径。</p>
       </article>
       <article class="update">
-        <span class="tag">EXPORT / INSTALL</span>
-        <h3>导出与安装确认</h3>
-        <p>AI 会话导出改为系统另存为，可取消；缺 WebView2 时先询问用户，安装界面可见，不再静默安装。</p>
+        <span class="tag">2.6.6</span>
+        <h3>日历三视图与组件外观</h3>
+        <p>完整月历 / 周视图 / 焦点视图；组件拖动吸附，Pro 磨砂、字体、字号、颜色可一次应用到全部。</p>
       </article>
     </div>
     <figure class="panel-wrap">
@@ -527,7 +527,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <div class="kicker">06 / 版本</div>
         <h2 id="editions-title">Lite 管好日程，<br>Pro 帮你把一天用透。</h2>
       </div>
-      <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏，以及更多组件、主题和工作区；AI 也多了检查点、研究员、技能和记忆。</p>
+      <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人，以及更多组件、主题和工作区；AI 另含日迹分析师。</p>
     </div>
     <div class="editions">
       <article class="edition">
@@ -556,11 +556,12 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
           <li><b>日迹 + AI 复盘</b> 记录心情、能量和一句话</li>
           <li><b>时间册导出</b> 单日或范围，带走这一天</li>
           <li><b>今日节奏</b> 按精力安排今天</li>
-          <li><b>9</b> 个桌面组件 · <b>21</b> 套主题 · 工作区预设</li>
-          <li><b>Pro AI</b> 检查点 / 研究员 / 技能 / 记忆</li>
+          <li><b>微信机器人</b> 扫码绑定，私聊查改日程 / 待办 / 便签</li>
+          <li><b>9</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
+          <li><b>AI 日迹分析师</b> 复盘日迹与日程，找模式</li>
         </ul>
         <div class="ed-cta">
-          <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.1 MB</small></a>
+          <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.2 MB</small></a>
           <p class="fine">20 元起自愿支持 · 不是订阅 · 一次支持长期可用</p>
         </div>
       </article>
@@ -574,9 +575,9 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <tr><td>日迹 + AI 复盘</td><td>—</td><td class="hot">有</td></tr>
         <tr><td>时间册导出</td><td>—</td><td class="hot">单日 / 范围</td></tr>
         <tr><td>今日节奏</td><td>—</td><td class="hot">有</td></tr>
-        <tr><td>AI 秘书</td><td>有</td><td class="hot">有 + 检查点 / 研究员 / 技能 / 记忆</td></tr>
+        <tr><td>AI 秘书</td><td>有</td><td class="hot">有 + 日迹分析师</td></tr>
         <tr><td>桌面组件</td><td>6 个</td><td class="hot">9 个</td></tr>
-        <tr><td>主题</td><td>6 套</td><td class="hot">21 套</td></tr>
+        <tr><td>主题</td><td>6 套</td><td class="hot">28 套</td></tr>
         <tr><td>工作区预设</td><td>—</td><td class="hot">有</td></tr>
         <tr><td>后续新增功能</td><td>现有功能长期可用</td><td class="hot">优先获得</td></tr>
         <tr><td>价格</td><td>免费</td><td class="hot">20 元起自愿支持</td></tr>
@@ -591,7 +592,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <h2 id="download-title">先免费用 14 天。<br>觉得值，再支持 Pro。</h2>
         <p class="lead">Pro 版下载后就是全功能，14 天内不打扰。Lite 永久免费，不需要试用。</p>
         <div class="cta-row">
-          <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.1 MB</small></a>
+          <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.2 MB</small></a>
           <a class="btn outline-light" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.7 MB</small></a>
         </div>
         <p class="note">Windows 10 / 11；缺 WebView2 首次启动会自动安装。Pro 与 Lite 均使用 <span class="mono">CN=UCalendar Studio</span> 代码签名，SmartScreen 首次仍可能提示，可从 Releases 核对文件大小。</p>
@@ -607,15 +608,15 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       <h3>常见问题</h3>
       <details>
         <summary>Lite 和 Pro 怎么选？</summary>
-        <p>只要核心日程、月历、天气、番茄钟、倒计时和桌面便签，选 Lite，永久免费。想要项目管理、便签管理、日迹、时间册导出、今日节奏、世界时钟、秒表、时间进度、工作区预设和全部 21 套主题，选 Pro。两个版本都带黄历 / 吉日，数据互通。</p>
+        <p>只要核心日程、月历、天气、番茄钟、倒计时和桌面便签，选 Lite，永久免费。想要项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、世界时钟、秒表、时间进度、工作区预设和全部 28 套主题，选 Pro。两个版本都带黄历 / 吉日，数据互通。</p>
       </details>
       <details>
         <summary>Lite 有 AI 秘书吗？</summary>
-        <p>有。Lite 和 Pro 都有 AI 秘书，基础对话和改日程都能用；AI 不是 Pro 专属。Pro 版另含检查点撤销、研究员、技能、记忆和状态栏。</p>
+        <p>有。Lite 和 Pro 都有 AI 秘书，基础对话、改日程、检查点、研究员、技能和记忆都能用；AI 不是 Pro 专属。Pro 版另含日迹分析师，可复盘日迹与日程。</p>
       </details>
       <details>
         <summary>Lite 有日迹和时间册吗？</summary>
-        <p>Lite v2.6.6 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
+        <p>Lite v2.7.2 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页和微信机器人；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
       </details>
       <details>
         <summary>数据会上传吗？</summary>
@@ -623,7 +624,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       </details>
       <details>
         <summary>支持码是订阅吗？</summary>
-        <p>不是。Pro 是 20 元起自愿支持码，一次支持，长期可用；一人一码。14 天试用到期后，日程、待办、AI、日迹和时间册仍可用；项目管理、便签管理、Pro 组件、今日节奏、工作区和高级主题需要支持码。</p>
+        <p>不是。Pro 是 20 元起自愿支持码，一次支持，长期可用；一人一码。14 天试用到期后，日程、待办、AI、日迹和时间册仍可用；项目管理、便签管理、微信机器人、Pro 组件、今日节奏、工作区和高级主题需要支持码。</p>
       </details>
       <details>
         <summary>支持 macOS 吗？</summary>
