@@ -128,7 +128,7 @@ h3{font-size:21px;line-height:1.35;margin:0}
 .shot-cap .real::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
 /* sections */
-section{padding:86px 0;border-top:1px solid var(--line)}
+section{padding:76px 0;border-top:1px solid var(--line)}
 .sec-head{display:grid;grid-template-columns:.92fr 1.08fr;gap:46px;align-items:end;margin-bottom:34px}
 .sec-head .lead{margin:0 0 4px;font-size:16px}
 
@@ -161,10 +161,12 @@ section{padding:86px 0;border-top:1px solid var(--line)}
 .update .more{display:inline-block;margin-top:14px;font:11.5px var(--mono);color:var(--accent);border-bottom:1px solid rgba(196,71,45,.35)}
 
 /* gallery */
-.gallery{columns:3;column-gap:16px}
-.widget-card{break-inside:avoid;margin:0 0 16px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.34)}
-.widget-card img{width:100%;height:auto;display:block;background:var(--dark)}
-.widget-meta{padding:14px 16px 16px}
+.gallery{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 14px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;-webkit-overflow-scrolling:touch}
+.gallery::-webkit-scrollbar{height:6px}
+.gallery::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:999px}
+.widget-card{flex:0 0 340px;scroll-snap-align:start;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.34)}
+.widget-card img{width:100%;height:400px;object-fit:contain;object-position:top;display:block;background:var(--dark)}
+.widget-meta{flex:1;padding:14px 16px 16px}
 .widget-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:5px}
 .widget-title h3{font-size:18px}
 .badge{font:10.5px var(--mono);letter-spacing:.03em;border:1px solid var(--line-2);border-radius:999px;padding:2px 7px;color:var(--dim);white-space:nowrap}
@@ -182,7 +184,7 @@ section{padding:86px 0;border-top:1px solid var(--line)}
 .author-note b{font-weight:600}
 
 /* editions */
-.editions{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.editions{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
 .edition{border:1px solid var(--line);border-radius:18px;padding:30px 28px 26px;background:rgba(255,255,255,.34);display:flex;flex-direction:column}
 .edition.pro{background:var(--ink);border-color:var(--ink);color:#f6f0e5}
 .edition .tag{display:inline-flex;align-self:flex-start;font:10.5px var(--mono);letter-spacing:.08em;border:1px solid var(--line-2);border-radius:999px;padding:3px 8px;color:var(--dim);margin-bottom:20px}
@@ -246,7 +248,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   .sec-head{grid-template-columns:1fr;gap:14px}
   .pain-grid{grid-template-columns:1fr}
   .how-steps{grid-template-columns:1fr}
-  .gallery{columns:2}
+  .widget-card{flex-basis:300px}
+  .widget-card img{height:370px}
   .download-card{grid-template-columns:1fr;gap:30px}
 }
 @media(max-width:720px){
@@ -256,8 +259,9 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   .nav .gh{margin-left:auto}
   .hero{padding:40px 0 48px}
   h1{font-size:clamp(40px,11vw,58px)}
-  section{padding:64px 0}
-  .gallery{columns:1}
+  section{padding:54px 0}
+  .widget-card{flex-basis:260px}
+  .widget-card img{height:330px}
   .boundaries,.updates,.editions{grid-template-columns:1fr}
   .facts{gap:12px 18px}
   .foot{align-items:flex-start;flex-direction:column;gap:14px}
@@ -370,7 +374,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       </article>
     </div>
     <figure class="panel-wrap">
-      <img src="assets/panel.webp" width="1560" height="1240" alt="UCalendar 主面板真实界面：左侧今日日期、黄历和日程，右侧月历与天气" loading="lazy">
+      <img src="assets/panel.webp" width="1560" height="1240" alt="UCalendar 主面板真实界面：左侧今日日期、黄历和日程，右侧月历与天气">
       <figcaption class="panel-cap"><span><b>同一份数据。</b>主面板改完，桌面上的月历、日程和倒计时也跟着变。</span><span>真实界面 · 2.6.6</span></figcaption>
     </figure>
   </section>
@@ -381,7 +385,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <div class="kicker">03 / 这次更新</div>
         <h2 id="update-title">2.7.2：28 套主题、微信机器人<br>和更稳的写入。</h2>
       </div>
-      <p class="lead">2.7.0 带来主题外观、字体和微信机器人；2.7.1–2.7.2 继续修交互与写入稳定性。2.6.6 的日历三视图和组件外观也保留在下面。</p>
+      <p class="lead">2.7.0 带来主题外观、字体和微信机器人；2.7.1–2.7.2 继续修交互与写入稳定性。2.6.6 的日历三视图保留在下面。</p>
     </div>
     <div class="updates">
       <article class="update">
@@ -397,7 +401,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       <article class="update">
         <span class="tag">STABILITY</span>
         <h3>写入稳定性</h3>
-        <p>修复数据库繁忙时可能提示 database is locked 的问题；优化日程、待办、便签、项目、回收站和 ICS 导入等写入路径。</p>
+        <p>修复数据库繁忙时偶发写入失败的问题；优化日程、待办、便签、项目、回收站和 ICS 导入等写入路径。</p>
       </article>
       <article class="update">
         <span class="tag">2.6.6</span>
@@ -406,12 +410,8 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
       </article>
     </div>
     <figure class="panel-wrap">
-      <img src="assets/calendar-views.webp" width="1500" height="650" alt="UCalendar 桌面日历三种显示模式：完整月历、周视图、焦点视图" loading="lazy">
+      <img src="assets/calendar-views.webp" width="1500" height="650" alt="UCalendar 桌面日历三种显示模式：完整月历、周视图、焦点视图">
       <figcaption class="panel-cap"><span><b>三种看法。</b>完整月历看全局，周视图看时间，焦点视图只看今天。</span><span>真实界面 · 2.6.6</span></figcaption>
-    </figure>
-    <figure class="panel-wrap" style="max-width:640px;margin-left:auto;margin-right:auto">
-      <img src="assets/widget-settings.webp" width="650" height="700" alt="UCalendar 组件设置：显示模式、拖动吸附、Pro 卡片外观、应用到全部、恢复当前 / 全部" loading="lazy">
-      <figcaption class="panel-cap"><span><b>设置里一次调好。</b>显示模式、吸附提示、Pro 外观与恢复全部。</span><span>真实界面 · 2.6.6</span></figcaption>
     </figure>
     <p class="gallery-note">完整更新记录在 <a href="https://github.com/tobaba/UCalendar/releases" target="_blank" rel="noopener" style="color:var(--accent);border-bottom:1px solid rgba(196,71,45,.35)">GitHub Releases ↗</a>。</p>
   </section>
@@ -426,70 +426,70 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
     </div>
     <div class="gallery">
       <article class="widget-card">
-        <img src="assets/widget-calendar.webp" width="720" height="900" alt="UCalendar 月历组件：农历、节气、节假日、日程点与下一个日程" loading="lazy">
+        <img src="assets/widget-calendar.webp" width="720" height="900" alt="UCalendar 月历组件：农历、节气、节假日、日程点与下一个日程">
         <div class="widget-meta">
           <div class="widget-title"><h3>月历</h3><span class="badge">Lite 免费</span></div>
           <p>农历、节气、节假日和日程点；这个月哪里有空，一眼看到。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-weather.webp" width="680" height="1080" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 3 天预报" loading="lazy">
+        <img src="assets/widget-weather.webp" width="680" height="1080" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 3 天预报">
         <div class="widget-meta">
           <div class="widget-title"><h3>天气</h3><span class="badge">Lite 免费</span></div>
           <p>逐时和 3 天预报；出门前不用再开网页。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-agenda.webp" width="680" height="1040" alt="UCalendar 今日日程组件：产品评审、待办与已完成事项" loading="lazy">
+        <img src="assets/widget-agenda.webp" width="680" height="1040" alt="UCalendar 今日日程组件：产品评审、待办与已完成事项">
         <div class="widget-meta">
           <div class="widget-title"><h3>今日日程</h3><span class="badge">Lite 免费</span></div>
           <p>今天几点做什么；进行中、已完成、待办都在一列。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-clock.webp" width="720" height="540" alt="UCalendar 世界时钟组件：本地时间、农历、东京和洛杉矶时间" loading="lazy">
+        <img src="assets/widget-clock.webp" width="720" height="540" alt="UCalendar 世界时钟组件：本地时间、农历、东京和洛杉矶时间">
         <div class="widget-meta">
           <div class="widget-title"><h3>世界时钟</h3><span class="badge pro">Pro</span></div>
           <p>本地时间、农历，再加东京和洛杉矶；跨时区开会不心算。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-pomodoro.webp" width="640" height="920" alt="UCalendar 番茄钟组件：25 分钟专注、绑定任务与今日番茄统计" loading="lazy">
+        <img src="assets/widget-pomodoro.webp" width="640" height="920" alt="UCalendar 番茄钟组件：25 分钟专注、绑定任务与今日番茄统计">
         <div class="widget-meta">
           <div class="widget-title"><h3>番茄钟</h3><span class="badge">Lite 免费</span></div>
           <p>25 分钟专注，绑定今天的一件事；结束自动记一轮。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-stickynote.webp" width="720" height="720" alt="UCalendar 便签组件：客户电话、购物和想法三张彩色便签" loading="lazy">
+        <img src="assets/widget-stickynote.webp" width="720" height="720" alt="UCalendar 便签组件：客户电话、购物和想法三张彩色便签">
         <div class="widget-meta">
           <div class="widget-title"><h3>便签</h3><span class="badge">Lite 免费</span></div>
           <p>随手记，支持标签和颜色；桌面便签长期免费，便签管理页属于 Pro。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-stopwatch.webp" width="640" height="680" alt="UCalendar 秒表组件：02:12.54 计时、分段记录与最快最慢标记" loading="lazy">
+        <img src="assets/widget-stopwatch.webp" width="640" height="680" alt="UCalendar 秒表组件：02:12.54 计时、分段记录与最快最慢标记">
         <div class="widget-meta">
           <div class="widget-title"><h3>秒表</h3><span class="badge pro">Pro</span></div>
           <p>分段计时；最快最慢自动标出来。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-countdown.webp" width="720" height="800" alt="UCalendar 倒计时组件：项目上线 17 天、妈妈生日 31 天、春节 97 天" loading="lazy">
+        <img src="assets/widget-countdown.webp" width="720" height="800" alt="UCalendar 倒计时组件：项目上线 17 天、妈妈生日 31 天、春节 97 天">
         <div class="widget-meta">
           <div class="widget-title"><h3>倒计时</h3><span class="badge">Lite 免费</span></div>
           <p>项目上线、家人生日、春节；重要日子有数。</p>
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-progress.webp" width="680" height="540" alt="UCalendar 时间进度组件：今天、本周、本月、今年和人生进度条" loading="lazy">
+        <img src="assets/widget-progress.webp" width="680" height="540" alt="UCalendar 时间进度组件：今天、本周、本月、今年和人生进度条">
         <div class="widget-meta">
           <div class="widget-title"><h3>时间进度</h3><span class="badge pro">Pro</span></div>
           <p>今天、本周、本月、今年走了多少；也可以看人生进度。</p>
         </div>
       </article>
     </div>
-    <p class="gallery-note"><b>组件不是钉死的。</b>支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 9 个。</p>
+    <p class="gallery-note"><b>横向滚动查看全部 9 个 →</b> 组件不是钉死的。支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 9 个。</p>
   </section>
 
   <section class="wrap" aria-labelledby="boundary-title">
