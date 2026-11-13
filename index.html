@@ -162,6 +162,7 @@ section{padding:76px 0;border-top:1px solid var(--line)}
 
 /* gallery */
 .gallery{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;padding:2px 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.gallery + .gallery { margin-top: 28px; }
 .gallery::-webkit-scrollbar{display:none}
 .widget-card{flex:0 0 340px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.34)}
 .widget-card img{width:100%;height:400px;object-fit:contain;object-position:top;display:block;background:var(--dark)}
@@ -281,7 +282,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
   <div class="wrap nav-in">
     <a class="brand" href="#top" aria-label="UCalendar 首页">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
-      <b>UCalendar</b><span class="ver">2.7.2</span>
+      <b>UCalendar</b><span class="ver">2.8.0</span>
     </a>
     <nav aria-label="页面导航">
       <a href="#why">为什么改</a>
@@ -435,10 +436,10 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-weather.webp" width="680" height="1080" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 3 天预报">
+        <img src="assets/widget-weather.webp" width="680" height="760" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 7 天预报">
         <div class="widget-meta">
           <div class="widget-title"><h3>天气</h3><span class="badge">Lite 免费</span></div>
-          <p>逐时和 3 天预报；出门前不用再开网页。</p>
+          <p>逐时和 7 天预报；出门前不用再开网页。</p>
         </div>
       </article>
       <article class="widget-card">
@@ -446,13 +447,6 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <div class="widget-meta">
           <div class="widget-title"><h3>今日日程</h3><span class="badge">Lite 免费</span></div>
           <p>今天几点做什么；进行中、已完成、待办都在一列。</p>
-        </div>
-      </article>
-      <article class="widget-card">
-        <img src="assets/widget-clock.webp" width="720" height="540" alt="UCalendar 世界时钟组件：本地时间、农历、东京和洛杉矶时间">
-        <div class="widget-meta">
-          <div class="widget-title"><h3>世界时钟</h3><span class="badge pro">Pro</span></div>
-          <p>本地时间、农历，再加东京和洛杉矶；跨时区开会不心算。</p>
         </div>
       </article>
       <article class="widget-card">
@@ -470,17 +464,26 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         </div>
       </article>
       <article class="widget-card">
-        <img src="assets/widget-stopwatch.webp" width="640" height="680" alt="UCalendar 秒表组件：02:12.54 计时、分段记录与最快最慢标记">
-        <div class="widget-meta">
-          <div class="widget-title"><h3>秒表</h3><span class="badge pro">Pro</span></div>
-          <p>分段计时；最快最慢自动标出来。</p>
-        </div>
-      </article>
-      <article class="widget-card">
         <img src="assets/widget-countdown.webp" width="720" height="800" alt="UCalendar 倒计时组件：项目上线 17 天、妈妈生日 31 天、春节 97 天">
         <div class="widget-meta">
           <div class="widget-title"><h3>倒计时</h3><span class="badge">Lite 免费</span></div>
           <p>项目上线、家人生日、春节；重要日子有数。</p>
+        </div>
+      </article>
+    </div>
+    <div class="gallery">
+      <article class="widget-card">
+        <img src="assets/widget-clock.webp" width="720" height="540" alt="UCalendar 世界时钟组件：本地时间、农历、东京和洛杉矶时间">
+        <div class="widget-meta">
+          <div class="widget-title"><h3>世界时钟</h3><span class="badge pro">Pro</span></div>
+          <p>本地时间、农历，再加东京和洛杉矶；跨时区开会不心算。</p>
+        </div>
+      </article>
+      <article class="widget-card">
+        <img src="assets/widget-stopwatch.webp" width="640" height="680" alt="UCalendar 秒表组件：02:12.54 计时、分段记录与最快最慢标记">
+        <div class="widget-meta">
+          <div class="widget-title"><h3>秒表</h3><span class="badge pro">Pro</span></div>
+          <p>分段计时；最快最慢自动标出来。</p>
         </div>
       </article>
       <article class="widget-card">
@@ -490,8 +493,29 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
           <p>今天、本周、本月、今年走了多少；也可以看人生进度。</p>
         </div>
       </article>
+      <article class="widget-card">
+        <img src="assets/widget-project.png" width="680" height="600" alt="UCalendar 项目进度组件：按截止日排序，阶段、进度与逾期一目了然">
+        <div class="widget-meta">
+          <div class="widget-title"><h3>项目进度</h3><span class="badge pro">Pro</span></div>
+          <p>进行中项目按截止日排序，阶段、进度与逾期一目了然。</p>
+        </div>
+      </article>
+      <article class="widget-card">
+        <img src="assets/widget-stock.png" width="760" height="880" alt="UCalendar 股票行情组件：自选最多 20 只，实时行情 + K 线，红涨绿跌 / 绿涨红跌">
+        <div class="widget-meta">
+          <div class="widget-title"><h3>股票行情</h3><span class="badge pro">Pro</span></div>
+          <p>自选最多 20 只，实时行情 + K 线，红涨绿跌 / 绿涨红跌。</p>
+        </div>
+      </article>
+      <article class="widget-card">
+        <img src="assets/widget-music.png" width="680" height="440" alt="UCalendar 音乐播放组件：接管系统媒体会话，封面、进度与播放控制">
+        <div class="widget-meta">
+          <div class="widget-title"><h3>音乐播放</h3><span class="badge pro">Pro</span></div>
+          <p>接管系统媒体会话，封面、进度与播放控制。</p>
+        </div>
+      </article>
     </div>
-    <p class="gallery-note"><b>鼠标移入自动滚动</b> · 手机左右滑动 · 共 12 个。组件不是钉死的，支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 6 个。</p>
+    <p class="gallery-note"><b>两组滚动，每组 6 个。</b> 鼠标移入自动滚动 · 手机左右滑动 · 共 12 个。组件不是钉死的，支持拖拽、缩放、透明度、置顶和鼠标穿透；位置会记住。Lite 有 6 个，Pro 有 6 个。</p>
   </section>
 
   <section class="wrap" aria-labelledby="boundary-title">
@@ -559,7 +583,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
           <li><b>时间册导出</b> 单日或范围，带走这一天</li>
           <li><b>今日节奏</b> 按精力安排今天</li>
           <li><b>微信机器人</b> 扫码绑定，私聊查改日程 / 待办 / 便签</li>
-          <li><b>9</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
+          <li><b>12</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
           <li><b>AI 日迹分析师</b> 复盘日迹与日程，找模式</li>
         </ul>
         <div class="ed-cta">
@@ -578,7 +602,7 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
         <tr><td>时间册导出</td><td>—</td><td class="hot">单日 / 范围</td></tr>
         <tr><td>今日节奏</td><td>—</td><td class="hot">有</td></tr>
         <tr><td>AI 秘书</td><td>有</td><td class="hot">有 + 日迹分析师</td></tr>
-        <tr><td>桌面组件</td><td>6 个</td><td class="hot">9 个</td></tr>
+        <tr><td>桌面组件</td><td>6 个</td><td class="hot">12 个</td></tr>
         <tr><td>主题</td><td>6 套</td><td class="hot">28 套</td></tr>
         <tr><td>工作区预设</td><td>—</td><td class="hot">有</td></tr>
         <tr><td>后续新增功能</td><td>现有功能长期可用</td><td class="hot">优先获得</td></tr>
@@ -651,57 +675,61 @@ footer{border-top:1px solid var(--line);padding:28px 0 40px}
 
 <script>
 (() => {
-  const gallery = document.querySelector('.gallery');
-  if (!gallery) return;
+  const galleries = document.querySelectorAll('.gallery');
+  if (!galleries.length) return;
   if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  let raf = 0;
-  let last = 0;
-  let dir = 1;
-  let resume = 0;
   const speed = 2;
+  const rafs = new Map();
+  const lasts = new Map();
+  const dirs = new Map();
+  const resumes = new Map();
 
-  const step = (now) => {
-    const dt = last ? Math.min(now - last, 32) : 16.7;
-    last = now;
+  const step = (gallery) => (now) => {
+    const dt = lasts.get(gallery) ? Math.min(now - lasts.get(gallery), 32) : 16.7;
+    lasts.set(gallery, now);
     const max = gallery.scrollWidth - gallery.clientWidth;
     if (max > 0) {
-      gallery.scrollLeft += (dir * speed * dt) / 16.7;
-      if (gallery.scrollLeft >= max - 1) dir = -1;
-      else if (gallery.scrollLeft <= 1) dir = 1;
+      gallery.scrollLeft += (dirs.get(gallery) * speed * dt) / 16.7;
+      if (gallery.scrollLeft >= max - 1) dirs.set(gallery, -1);
+      else if (gallery.scrollLeft <= 1) dirs.set(gallery, 1);
     }
-    raf = requestAnimationFrame(step);
+    rafs.set(gallery, requestAnimationFrame(step(gallery)));
   };
 
-  const start = () => {
-    if (raf) return;
-    last = 0;
-    raf = requestAnimationFrame(step);
+  const start = (gallery) => {
+    if (rafs.get(gallery)) return;
+    lasts.set(gallery, 0);
+    rafs.set(gallery, requestAnimationFrame(step(gallery)));
   };
 
-  const stop = () => {
-    if (!raf) return;
-    cancelAnimationFrame(raf);
-    raf = 0;
+  const stop = (gallery) => {
+    if (!rafs.get(gallery)) return;
+    cancelAnimationFrame(rafs.get(gallery));
+    rafs.delete(gallery);
   };
 
-  gallery.addEventListener('mouseenter', start);
-  gallery.addEventListener('mouseleave', () => {
-    clearTimeout(resume);
-    stop();
+  galleries.forEach((gallery) => {
+    dirs.set(gallery, 1);
+    gallery.addEventListener('mouseenter', () => start(gallery));
+    gallery.addEventListener('mouseleave', () => {
+      clearTimeout(resumes.get(gallery));
+      stop(gallery);
+    });
+    gallery.addEventListener('pointerdown', () => stop(gallery));
+    gallery.addEventListener('focusin', () => stop(gallery));
+    gallery.addEventListener('wheel', () => {
+      stop(gallery);
+      clearTimeout(resumes.get(gallery));
+      resumes.set(gallery, setTimeout(() => {
+        if (gallery.matches(':hover')) start(gallery);
+      }, 1500));
+    }, { passive: true });
   });
-  gallery.addEventListener('pointerdown', stop);
-  gallery.addEventListener('focusin', stop);
-  gallery.addEventListener('wheel', () => {
-    stop();
-    clearTimeout(resume);
-    resume = setTimeout(() => {
-      if (gallery.matches(':hover')) start();
-    }, 1500);
-  }, { passive: true });
+
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop();
+    if (document.hidden) galleries.forEach(stop);
   });
 })();
 </script>
