@@ -62,7 +62,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .brand{display:flex;align-items:center;gap:10px;padding:2px 8px 0;font-weight:600;font-size:16px;line-height:1.2}
 .brand svg{width:26px;height:26px;flex:none}
 .brand .ver{font:11px var(--mono);color:var(--muted);margin-left:2px}
-.side-sub{padding:10px 8px 18px;font-size:12px;line-height:1.6;color:var(--muted)}
+.side-sub{padding:10px 8px 18px;font-size:11px;line-height:1.6;color:var(--muted);white-space:nowrap}
 .side-label{padding:0 8px 8px;font:11px var(--mono);color:var(--muted)}
 .side-nav{display:grid;gap:2px}
 .side-nav a{
@@ -299,7 +299,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
       <b>UCalendar</b><span class="ver">2.8.4</span>
     </a>
-    <p class="side-sub">Windows 桌面日历待办 · 项目 · AI 秘书</p>
+    <p class="side-sub">Windows 桌面日历 · 待办 · AI 秘书</p>
     <p class="side-label">页面</p>
     <nav class="side-nav" aria-label="页内导航">
       <a href="#overview" aria-current="location">概览</a>
@@ -408,7 +408,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <section id="updates" class="wrap" aria-labelledby="update-title">
         <div class="sec-head">
           <div>
-            <div class="kicker">03 · 这次更新</div>
+            <div class="kicker">03 · 最新 v2.8.4</div>
             <h2 id="update-title">2.8.4：12 个桌面组件、股票 / 音乐和稳定性修复</h2>
           </div>
           <p class="lead">2.8.0 把项目进度、股票行情和音乐播放收进桌面组件，并带来收起胶囊栏；2.8.1–2.8.4 补上设置搜索、股票 K 线、安全加固和一轮稳定性修复。</p>
@@ -425,9 +425,20 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <p>自选最多 20 只，东财行情 / K 线优先，镜像与 stale 自动回退；支持红涨绿跌 / 绿涨红跌、刷新频率和 K 线周期设置。</p>
           </article>
           <article class="update">
+            <span class="tag">时钟</span>
+            <h3>任务栏时钟（Pro）</h3>
+            <p>时钟、日期、天气等直接进任务栏；Win11 开关自定义样式或升级时不再重启资源管理器，退出后图标与按钮自动恢复。</p>
+          </article>
+          <article class="update">
+            <span class="tag">AI</span>
+            <h3>AI 秘书（Lite 免费）</h3>
+            <p>一句话改期、查空闲、撤销本轮；支持图片、联网搜索、工作区文件和本地记忆，改完先给你看冲突。</p>
+          </article>
+          <article class="update">
             <span class="tag">安全</span>
             <h3>2.8.4 稳定性与签名</h3>
             <p>统一 Pro / Lite 代码签名为 <span class="mono">CN=UCalendar Studio</span>；2.8.3–2.8.4 修复 Win11 任务栏时钟开关导致资源管理器重启、胶囊栏右侧裁切和二级窗口任务栏图标重复，并降低 WebView2 内存占用。</p>
+            <a class="more" href="https://github.com/tobaba/UCalendar/releases/tag/v2.8.4" target="_blank" rel="noopener">v2.8.4 更新说明 ↗</a>
           </article>
           <article class="update">
             <span class="tag">主题</span>
@@ -576,7 +587,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <div class="kicker">06 · 版本</div>
             <h2 id="editions-title">Lite 管好日程，Pro 帮你把一天用透</h2>
           </div>
-          <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人，以及更多组件、主题和工作区；AI 另含日迹分析师。</p>
+          <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、自定义任务栏时钟，以及更多组件、主题和工作区；AI 另含日迹分析师。</p>
         </div>
         <div class="editions">
           <article class="edition">
@@ -606,6 +617,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <li><b>时间册导出</b> 单日或范围，带走这一天</li>
               <li><b>今日节奏</b> 按精力安排今天</li>
               <li><b>微信机器人</b> 扫码绑定，私聊查改日程 / 待办 / 便签</li>
+              <li><b>任务栏时钟</b> 时钟 / 日期 / 农历 / 天气，样式可自定义</li>
               <li><b>12</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
               <li><b>AI 日迹分析师</b> 复盘日迹与日程，找模式</li>
             </ul>
@@ -625,6 +637,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <tr><td>时间册导出</td><td>—</td><td class="hot">单日 / 范围</td></tr>
             <tr><td>今日节奏</td><td>—</td><td class="hot">有</td></tr>
             <tr><td>AI 秘书</td><td>有</td><td class="hot">有 + 日迹分析师</td></tr>
+            <tr><td>任务栏时钟</td><td>—</td><td class="hot">自定义样式</td></tr>
             <tr><td>桌面组件</td><td>6 个</td><td class="hot">12 个</td></tr>
             <tr><td>主题</td><td>6 套</td><td class="hot">28 套</td></tr>
             <tr><td>工作区预设</td><td>—</td><td class="hot">有</td></tr>
