@@ -206,6 +206,10 @@ h3{line-height:1.35;margin:0}
 .dl-step .n{font:11px var(--mono);color:var(--accent-strong);padding-top:1px}
 .dl-step p{margin:0;font-size:12.5px;line-height:1.7;color:var(--muted)}
 .dl-step b{color:var(--ink);font-weight:600}
+.support-card{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:center;margin-top:16px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.support-card img{width:180px;height:180px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.support-card h3{font-size:18px;margin:4px 0 6px}
+.support-card p{margin:0;font-size:13px;line-height:1.7;color:var(--muted);max-width:640px}
 .faq{margin-top:32px}
 .faq h3{font-size:19px;margin-bottom:10px}
 .faq details{border-top:1px solid var(--line);padding:12px 0}
@@ -273,6 +277,8 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .widget-card img{height:190px}
   .download-card{grid-template-columns:1fr;gap:24px;padding:20px}
+  .support-card{grid-template-columns:1fr;gap:14px;padding:18px}
+  .support-card img{width:150px;height:150px}
   .facts{gap:8px 16px}
   .foot{align-items:flex-start;flex-direction:column;gap:12px}
   .panel-cap{flex-direction:column;gap:3px}
@@ -663,6 +669,15 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <div class="dl-step"><div class="n">01</div><p><b>下载 exe，双击运行。</b>不用安装，不写系统目录。</p></div>
             <div class="dl-step"><div class="n">02</div><p><b>数据默认在 <span class="mono">%LOCALAPPDATA%\UCalendar</span>。</b>exe 同目录放 <span class="mono">data\</span> 时使用便携目录。</p></div>
             <div class="dl-step"><div class="n">03</div><p><b>AI 需要填自己的 API Key。</b>不填也能用日程、待办和桌面组件。</p></div>
+          </div>
+        </div>
+
+        <div class="support-card">
+          <img src="assets/support-qr.png" width="180" height="180" alt="UCalendar 微信赞赏码">
+          <div>
+            <div class="kicker">自愿支持</div>
+            <h3>觉得有用，再支持 Pro</h3>
+            <p>20 元起，一次支持，长期可用；不是订阅。扫码后请在赞赏留言中填写邮箱，作者会把支持码发到该邮箱。Lite 永久免费，支持完全自愿。</p>
           </div>
         </div>
 
