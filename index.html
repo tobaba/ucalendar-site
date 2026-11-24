@@ -220,7 +220,7 @@ h3{line-height:1.35;margin:0}
 .faq details[open] summary::after{content:"−"}
 .faq details p{margin:8px 0 0;font-size:12.5px;line-height:1.75;color:var(--muted);max-width:760px}
 
-footer{border-top:1px solid var(--line);padding:20px 0 72px}
+footer{border-top:1px solid var(--line);padding:20px 0 28px}
 .foot{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted)}
 .foot nav{display:flex;flex-wrap:wrap;gap:14px}
 .foot a{text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px}
@@ -769,8 +769,13 @@ footer{border-top:1px solid var(--line);padding:20px 0 72px}
   setActive();
 
   const toTop = document.getElementById('to-top');
-  const toggleToTop = () => toTop.classList.toggle('is-visible', window.scrollY > 600);
+  const footer = document.querySelector('footer');
+  const toggleToTop = () => {
+    const footerInView = footer.getBoundingClientRect().top < window.innerHeight;
+    toTop.classList.toggle('is-visible', window.scrollY > 600 && !footerInView);
+  };
   window.addEventListener('scroll', toggleToTop, { passive: true });
+  window.addEventListener('resize', toggleToTop);
   toggleToTop();
   toTop.addEventListener('click', () => {
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
