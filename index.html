@@ -303,7 +303,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
   <aside class="sidebar" aria-label="页面导航">
     <a class="brand" href="#overview" aria-label="UCalendar 首页">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
-      <b>UCalendar</b><span class="ver">2.8.4</span>
+      <b>UCalendar</b><span class="ver">3.0.0</span>
     </a>
     <p class="side-sub">Windows 桌面日历 · 待办 · AI 秘书</p>
     <p class="side-label">页面</p>
@@ -318,7 +318,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <a href="#download">下载</a>
     </nav>
     <div class="side-foot">
-      <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.3 MB</small></a>
+      <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.9 MB</small></a>
       <a class="side-link" href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </aside>
@@ -406,50 +406,55 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
           </article>
         </div>
         <figure class="panel-wrap">
-          <img src="assets/panel-v282.webp" width="975" height="775" alt="UCalendar 主面板真实界面：今日日期、黄历、6 个日程和 4 个待办，右侧月历与天气">
-          <figcaption class="panel-cap"><span><b>同一份数据。</b>主面板改完，桌面上的月历、日程和倒计时也跟着变。</span><span>真实界面 · 2.8.4</span></figcaption>
+          <img src="assets/panel-v300.webp" width="975" height="775" alt="UCalendar 3.0 主面板真实界面：今日日期、黄历、日程待办、右侧月历与天气">
+          <figcaption class="panel-cap"><span><b>同一份数据。</b>主面板改完，桌面上的月历、日程和倒计时也跟着变。</span><span>真实界面 · 3.0.0</span></figcaption>
         </figure>
       </section>
 
       <section id="updates" class="wrap" aria-labelledby="update-title">
         <div class="sec-head">
           <div>
-            <div class="kicker">03 · 最新 v2.8.4</div>
-            <h2 id="update-title">2.8.4：12 个桌面组件、股票 / 音乐和稳定性修复</h2>
+            <div class="kicker">03 · 最新 v3.0.0</div>
+            <h2 id="update-title">3.0.0：任务栏时钟重做、天气升级与待办面板</h2>
           </div>
-          <p class="lead">2.8.0 把项目进度、股票行情和音乐播放收进桌面组件，并带来收起胶囊栏；2.8.1–2.8.4 补上设置搜索、股票 K 线、安全加固和一轮稳定性修复。</p>
+          <p class="lead">3.0 重做任务栏时钟的渲染与注入，升级天气数据源，补齐待办面板与音乐频谱；日程、待办和 2.x 数据继续兼容。</p>
         </div>
         <div class="updates">
           <article class="update">
-            <span class="tag">组件</span>
-            <h3>12 个桌面组件</h3>
-            <p>项目进度、股票行情、音乐播放加入 Pro；Lite 保留 6 个常用组件。收起后的组件汇总到全局胶囊栏，支持点击 / 悬停展开、拖动排序和“全部展开”。</p>
-          </article>
-          <article class="update">
-            <span class="tag">股票</span>
-            <h3>股票行情与 K 线（Pro）</h3>
-            <p>自选最多 20 只，东财行情 / K 线优先，镜像与 stale 自动回退；支持红涨绿跌 / 绿涨红跌、刷新频率和 K 线周期设置。</p>
-          </article>
-          <article class="update">
             <span class="tag">时钟</span>
-            <h3>任务栏时钟（Pro）</h3>
-            <p>时钟、日期、天气等直接进任务栏；Win11 开关自定义样式或升级时不再重启资源管理器，退出后图标与按钮自动恢复。</p>
+            <h3>任务栏时钟重做（Pro）</h3>
+            <p>Win11 常驻 TAP 渲染器，切换格式、字体、字号和颜色不再重复注入；Win10 宽样式左扩时同步重排任务栏，切换小按钮后自动恢复。</p>
           </article>
           <article class="update">
-            <span class="tag">AI</span>
-            <h3>AI 秘书（Lite 免费）</h3>
-            <p>一句话改期、查空闲、撤销本轮；支持图片、联网搜索、工作区文件和本地记忆，改完先给你看冲突。</p>
+            <span class="tag">天气</span>
+            <h3>天气数据源升级</h3>
+            <p>中国区使用本地实况数据，海外坐标使用国际数据源；主源失败自动回退备用源。逐时、7 天、日出日落和空气质量字段保持兼容。</p>
           </article>
           <article class="update">
-            <span class="tag">安全</span>
-            <h3>2.8.4 稳定性与签名</h3>
-            <p>统一 Pro / Lite 代码签名为 <span class="mono">CN=UCalendar Studio</span>；2.8.3–2.8.4 修复 Win11 任务栏时钟开关导致资源管理器重启、胶囊栏右侧裁切和二级窗口任务栏图标重复，并降低 WebView2 内存占用。</p>
-            <a class="more" href="https://github.com/tobaba/UCalendar/releases/tag/v2.8.4" target="_blank" rel="noopener">v2.8.4 更新说明 ↗</a>
+            <span class="tag">音乐</span>
+            <h3>布局与系统混音频谱（Pro）</h3>
+            <p>控制流、封面和黑胶横竖版自动布局；6 种频谱只在播放且组件可见时采集，暂停或隐藏即停止。</p>
+          </article>
+          <article class="update">
+            <span class="tag">待办</span>
+            <h3>待办面板</h3>
+            <p>新增「未来」分段，已完成默认折叠；重复待办按系列收起，支持逾期顺延、批量完成和 6 秒内撤销顺延。</p>
+          </article>
+          <article class="update">
+            <span class="tag">日历</span>
+            <h3>日历与黄历</h3>
+            <p>桌面月历新增选中日宜忌摘要，可展开完整黄历；跨格日程条与项目条不再遮挡日期，矮窗口也保持可读。</p>
+          </article>
+          <article class="update">
+            <span class="tag">支持</span>
+            <h3>支持流程与稳定性</h3>
+            <p>换用新收款码，流程简化为扫码付款备注邮箱、收取支持码、填入解锁；同时修复右键菜单首次弹出慢和设置页控件无响应。</p>
+            <a class="more" href="https://github.com/tobaba/UCalendar/releases/tag/v3.0.0" target="_blank" rel="noopener">v3.0.0 更新说明 ↗</a>
           </article>
           <article class="update">
             <span class="tag">主题</span>
             <h3>28 套主题与字体</h3>
-            <p>设置里的主题外观画廊按编号 01–28 一屏看全；支持切换字体与字号。「智核」主面板顶部为翻页时钟。</p>
+            <p>主题外观画廊按编号 01–28 一屏看全；支持切换字体与字号。「智核」主面板顶部为翻页时钟。</p>
           </article>
         </div>
         <figure class="panel-wrap">
@@ -469,42 +474,42 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
         </div>
         <div class="gallery">
           <article class="widget-card">
-            <img src="assets/widget-calendar-v282.webp" width="375" height="525" alt="UCalendar 月历组件：农历、节气、节假日、日程点与下一个日程">
+            <img src="assets/widget-calendar-v300.webp" width="375" height="525" alt="UCalendar 月历组件：农历、节气、节假日、日程点与下一个日程">
             <div class="widget-meta">
               <div class="widget-title"><h3>月历</h3><span class="badge">Lite 免费</span></div>
               <p>农历、节气、节假日和日程点；这个月哪里有空，一眼看到。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-weather-v282.webp" width="375" height="650" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 7 天预报">
+            <img src="assets/widget-weather-v300.webp" width="375" height="650" alt="UCalendar 天气组件：南京市实时天气、逐时预报和 7 天预报">
             <div class="widget-meta">
               <div class="widget-title"><h3>天气</h3><span class="badge">Lite 免费</span></div>
               <p>逐时和 7 天预报；出门前不用再开网页。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-agenda-v282.webp" width="375" height="475" alt="UCalendar 日程/待办组件：已逾期事项、今天 11 项日程与待办、搜索和分类筛选">
+            <img src="assets/widget-agenda-v300.webp" width="375" height="525" alt="UCalendar 日程/待办组件：逾期、今天和未来分段，日程与待办在同一条时间线上">
             <div class="widget-meta">
               <div class="widget-title"><h3>日程 / 待办</h3><span class="badge">Lite 免费</span></div>
               <p>今天几点做什么；已逾期、待办和日程在同一条时间线上。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-pomodoro-v282.webp" width="325" height="450" alt="UCalendar 番茄钟组件：25 分钟专注、绑定任务与今日番茄统计">
+            <img src="assets/widget-pomodoro-v300.webp" width="325" height="450" alt="UCalendar 番茄钟组件：25 分钟专注、绑定任务与今日番茄统计">
             <div class="widget-meta">
               <div class="widget-title"><h3>番茄钟</h3><span class="badge">Lite 免费</span></div>
               <p>25 分钟专注，绑定今天的一件事；结束自动记一轮。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-stickynote-v282.webp" width="375" height="400" alt="UCalendar 便签组件：想法、周末采购和客户电话三张彩色便签">
+            <img src="assets/widget-stickynote-v300.webp" width="375" height="400" alt="UCalendar 便签组件：想法、周末采购和客户电话三张彩色便签">
             <div class="widget-meta">
               <div class="widget-title"><h3>便签</h3><span class="badge">Lite 免费</span></div>
               <p>随手记，支持标签和颜色；桌面便签长期免费，便签管理页属于 Pro。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-countdown-v282.webp" width="375" height="300" alt="UCalendar 倒计时组件：项目上线 17 天、妈妈生日 31 天、春节 82 天">
+            <img src="assets/widget-countdown-v300.webp" width="375" height="300" alt="UCalendar 倒计时组件：圣诞、元旦和春节等重要日子一眼可见">
             <div class="widget-meta">
               <div class="widget-title"><h3>倒计时</h3><span class="badge">Lite 免费</span></div>
               <p>项目上线、家人生日、春节；重要日子有数。</p>
@@ -513,42 +518,42 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
         </div>
         <div class="gallery">
           <article class="widget-card">
-            <img src="assets/widget-clock-v282.webp" width="375" height="282" alt="UCalendar 世界时钟组件：本地时间、农历，以及伦敦、纽约和东京时间">
+            <img src="assets/widget-clock-v300.webp" width="350" height="214" alt="UCalendar 世界时钟组件：本地时间、农历，以及伦敦、纽约和东京时间">
             <div class="widget-meta">
               <div class="widget-title"><h3>世界时钟</h3><span class="badge pro">Pro</span></div>
               <p>本地时间、农历，再加伦敦、纽约和东京；跨时区开会不心算。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-stopwatch-v282.webp" width="325" height="350" alt="UCalendar 秒表组件：02:12.54 计时、分段记录与最快最慢标记">
+            <img src="assets/widget-stopwatch-v300.webp" width="325" height="350" alt="UCalendar 秒表组件：分段计时与最快最慢标记">
             <div class="widget-meta">
               <div class="widget-title"><h3>秒表</h3><span class="badge pro">Pro</span></div>
               <p>分段计时；最快最慢自动标出来。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/widget-progress-v282.webp" width="375" height="300" alt="UCalendar 时间进度组件：今天、本周、本月和今年进度条">
+            <img src="assets/widget-progress-v300.webp" width="350" height="325" alt="UCalendar 时间进度组件：今天、本周、本月和今年进度条">
             <div class="widget-meta">
               <div class="widget-title"><h3>时间进度</h3><span class="badge pro">Pro</span></div>
               <p>今天、本周、本月、今年走了多少；设置生日后还能看人生进度。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/project-v282.webp" width="375" height="325" alt="UCalendar 项目进度组件：进行中的客户官网改造项目、剩余 21 天与 44% 进度环">
+            <img src="assets/widget-project-v300.webp" width="375" height="325" alt="UCalendar 项目进度组件：进行中的项目、剩余天数与进度环">
             <div class="widget-meta">
               <div class="widget-title"><h3>项目进度</h3><span class="badge pro">Pro</span></div>
               <p>进行中的项目按截止日排好；进度环、当前阶段和剩余天数一眼看到，点一下打开项目。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/stock-v282.webp" width="450" height="525" alt="UCalendar 股票行情组件：上证指数、深证成指、创业板指、恒生指数、纳斯达克等自选行情">
+            <img src="assets/widget-stock-v300.webp" width="450" height="525" alt="UCalendar 股票行情组件：上证指数、深证成指、创业板指、恒生指数、纳斯达克等自选行情">
             <div class="widget-meta">
               <div class="widget-title"><h3>股票行情</h3><span class="badge pro">Pro</span></div>
               <p>自选最多 20 只，实时行情和 K 线；东财优先，镜像与 stale 自动回退。</p>
             </div>
           </article>
           <article class="widget-card">
-            <img src="assets/music-v282.webp" width="500" height="325" alt="UCalendar 音乐播放组件：Edge 正在播放夜航、专辑封面、播放进度和系统媒体控制">
+            <img src="assets/widget-music-v300.webp" width="400" height="250" alt="UCalendar 音乐播放组件：专辑封面、播放进度和系统媒体控制">
             <div class="widget-meta">
               <div class="widget-title"><h3>音乐播放</h3><span class="badge pro">Pro</span></div>
               <p>接入 Windows 系统媒体会话，封面、歌名、进度和播放控制都在桌面，不用登录。</p>
@@ -608,7 +613,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <li><b>黄历 / 吉日</b> 1900–2100 离线宜忌</li>
             </ul>
             <div class="ed-cta">
-              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.8 MB</small></a>
+              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.4 MB</small></a>
               <p class="fine">无广告 · 不登录 · 数据在本机</p>
             </div>
           </article>
@@ -628,7 +633,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <li><b>AI 日迹分析师</b> 复盘日迹与日程，找模式</li>
             </ul>
             <div class="ed-cta">
-              <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.3 MB</small></a>
+              <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.9 MB</small></a>
               <p class="fine">20 元起自愿支持 · 不是订阅 · 一次支持长期可用</p>
             </div>
           </article>
@@ -660,8 +665,8 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <h2 id="download-title">先用起来。觉得值，再支持 Pro</h2>
             <p class="lead">Pro 下载后直接可用，不登录、不弹付费墙；觉得值得，再支持长期使用。Lite 永久免费。</p>
             <div class="cta-row">
-              <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.3 MB</small></a>
-              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.8 MB</small></a>
+              <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>9.9 MB</small></a>
+              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.4 MB</small></a>
             </div>
             <p class="note">Windows 10 / 11；缺 WebView2 首次启动会自动安装。Pro 与 Lite 均使用 <span class="mono">CN=UCalendar Studio</span> 代码签名，SmartScreen 首次仍可能提示，可从 Releases 核对文件大小。</p>
           </div>
@@ -673,11 +678,11 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
         </div>
 
         <div class="support-card">
-          <img src="assets/support-qr.png" width="180" height="180" alt="UCalendar 微信赞赏码">
+          <img src="assets/support-qr.png" width="180" height="180" alt="UCalendar 微信收款码">
           <div>
             <div class="kicker">自愿支持</div>
             <h3>觉得有用，再支持 Pro</h3>
-            <p>20 元起，一次支持，长期可用；不是订阅。扫码后请在赞赏留言中填写邮箱，作者会把支持码发到该邮箱。Lite 永久免费，支持完全自愿。</p>
+            <p>20 元起，一次支持，长期可用；不是订阅。扫码付款后请在付款备注中填写邮箱，作者会把支持码发到该邮箱。Lite 永久免费，支持完全自愿。</p>
           </div>
         </div>
 
@@ -693,7 +698,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
           </details>
           <details>
             <summary>Lite 有日迹和时间册吗？</summary>
-            <p>Lite v2.8.4 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页和微信机器人；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
+            <p>Lite v3.0.0 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页和微信机器人；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
           </details>
           <details>
             <summary>数据会上传吗？</summary>
