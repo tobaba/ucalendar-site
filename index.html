@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UCalendar · 日历最难的，不是看，是改</title>
-<meta name="description" content="UCalendar，Windows 桌面日历 + AI 秘书。项目阶段、黄历吉日、日程待办放在同一张桌面；15 个桌面组件、28 套主题、本地 SQLite。Lite 也有 AI 秘书与便签。">
+<meta name="description" content="UCalendar，Windows 桌面日历 + AI 秘书。项目阶段、黄历吉日、日程待办放在同一张桌面；16 个桌面组件、28 套主题、本地 SQLite。Lite 也有 AI 秘书与便签。">
 <meta name="theme-color" content="#f6f2ea">
 <link rel="canonical" href="https://tobaba.github.io/ucalendar-site/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="UCalendar · 日历最难的，不是看，是改">
-<meta property="og:description" content="项目阶段、黄历吉日、日程待办；15 个桌面组件、28 套主题、本地数据。Lite 也有 AI 秘书与便签。">
+<meta property="og:description" content="项目阶段、黄历吉日、日程待办；16 个桌面组件、28 套主题、本地数据。Lite 也有 AI 秘书与便签。">
 <meta property="og:image" content="https://tobaba.github.io/ucalendar-site/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="UCalendar · 日历最难的，不是看，是改">
-<meta name="twitter:description" content="项目阶段、黄历吉日、日程待办；15 个桌面组件、28 套主题、本地数据。">
+<meta name="twitter:description" content="项目阶段、黄历吉日、日程待办；16 个桌面组件、28 套主题、本地数据。">
 <meta name="twitter:image" content="https://tobaba.github.io/ucalendar-site/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23211f1a'/%3E%3Crect x='14' y='16' width='36' height='32' rx='6' fill='none' stroke='%23f4efe5' stroke-width='3'/%3E%3Cpath d='M14 26h36' stroke='%23f4efe5' stroke-width='3'/%3E%3Cpath d='M24 12v8M40 12v8' stroke='%23c4472d' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='37' r='4' fill='%23c4472d'/%3E%3C/svg%3E">
 <style>
@@ -150,10 +150,10 @@ h3{line-height:1.35;margin:0}
 .update p{margin:0;font-size:13px;line-height:1.7;color:var(--muted)}
 .update .more{display:inline-block;margin-top:10px;font:11.5px var(--mono);color:var(--accent-strong);border-bottom:1px solid rgba(150,48,31,.35)}
 
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.gallery + .gallery{margin-top:12px}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .widget-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .widget-card img{width:100%;height:220px;object-fit:cover;object-position:top;background:var(--dark);border-bottom:1px solid var(--line)}
+.widget-card img.contain{object-fit:contain}
 .widget-meta{flex:1;padding:12px 14px 14px}
 .widget-title{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:3px}
 .widget-title h3{font-size:15px}
@@ -304,7 +304,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
   <aside class="sidebar" aria-label="页面导航">
     <a class="brand" href="#overview" aria-label="UCalendar 首页">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="8" width="48" height="48" rx="14" fill="#211f1a"/><rect x="17" y="19" width="30" height="27" rx="5" fill="none" stroke="#f4efe5" stroke-width="2.5"/><path d="M17 28h30" stroke="#f4efe5" stroke-width="2.5"/><path d="M25 15v7M39 15v7" stroke="#c4472d" stroke-width="3.5" stroke-linecap="round"/><circle cx="32" cy="37" r="3.5" fill="#c4472d"/></svg>
-      <b>UCalendar</b><span class="ver">3.1.0</span>
+      <b>UCalendar</b><span class="ver">3.2.0</span>
     </a>
     <p class="side-sub">Windows 桌面日历 · 待办 · AI 秘书</p>
     <p class="side-label">页面</p>
@@ -319,7 +319,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <a href="#download">下载</a>
     </nav>
     <div class="side-foot">
-      <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.1 MB</small></a>
+      <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>11.2 MB</small></a>
       <a class="side-link" href="https://github.com/tobaba/UCalendar" target="_blank" rel="noopener">GitHub ↗</a>
     </div>
   </aside>
@@ -335,9 +335,9 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>免费下载 · 先体验</small></a>
             <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>永久免费</small></a>
           </div>
-          <p class="hero-note">Lite 也有 AI 秘书、黄历吉日和桌面便签；Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、9 个桌面组件、22 套高级主题和工作区。<a href="#how">先看它怎么改 ↓</a></p>
+          <p class="hero-note">Lite 也有 AI 秘书、黄历吉日和桌面便签；Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、10 个桌面组件、22 套高级主题和工作区。<a href="#how">先看它怎么改 ↓</a></p>
           <div class="facts" aria-label="产品事实">
-            <span><b>15</b> 个桌面组件</span>
+            <span><b>16</b> 个桌面组件</span>
             <span><b>28</b> 套主题</span>
             <span><b>本地</b> SQLite</span>
             <span><b>Windows</b> 10 / 11</span>
@@ -415,12 +415,23 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <section id="updates" class="wrap" aria-labelledby="update-title">
         <div class="sec-head">
           <div>
-            <div class="kicker">03 · 最新 v3.1.0</div>
-            <h2 id="update-title">3.1：每日打卡、系统监控与课程表</h2>
+            <div class="kicker">03 · 最新 v3.2.0</div>
+            <h2 id="update-title">3.2：剪贴板历史与自动更新</h2>
           </div>
-          <p class="lead">3.1 新增每日打卡、系统监控和课程表三块 Pro 组件；桌面组件改为自动列式排版，股票行情增加备用数据源。</p>
+          <p class="lead">3.2 新增 Pro 剪贴板历史与自动更新；剪贴板自动记录文本、图片和文件，自动更新走国内网盘主源并回退 GitHub。3.1 的每日打卡、系统监控和课程表继续保留。</p>
         </div>
         <div class="updates">
+          <article class="update">
+            <span class="tag">记录</span>
+            <h3>剪贴板历史（Pro）</h3>
+            <p>自动记录文本、图片和文件，最多 500 条；类型识别、筛选、全文搜索与置顶，敏感内容默认打码，固定片段可编辑。</p>
+          </article>
+          <article class="update">
+            <span class="tag">更新</span>
+            <h3>自动更新</h3>
+            <p>设置 → 关于可手动检查；启动后后台检查并预下载，只下载不替换，提示「重启更新」；国内网盘主源 + GitHub 回退，原生自替换重启。</p>
+            <a class="more" href="https://github.com/tobaba/UCalendar/releases/tag/v3.2.0" target="_blank" rel="noopener">v3.2.0 更新说明 ↗</a>
+          </article>
           <article class="update">
             <span class="tag">健康</span>
             <h3>每日打卡（Pro）</h3>
@@ -447,12 +458,6 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <p>行情与 K 线增加备用数据源（A 股、港股、美股），主数据源异常时自动切换并冷却；K 线失败自动重试一次。</p>
           </article>
           <article class="update">
-            <span class="tag">数据</span>
-            <h3>演示数据与更新</h3>
-            <p>演示数据新增 5 个打卡习惯、最近 30 天记录与血压 / 体重；升级时自动刷新未改动的演示数据。</p>
-            <a class="more" href="https://github.com/tobaba/UCalendar/releases/tag/v3.1.0" target="_blank" rel="noopener">v3.1.0 更新说明 ↗</a>
-          </article>
-          <article class="update">
             <span class="tag">主题</span>
             <h3>28 套主题与字体</h3>
             <p>主题外观画廊按编号 01–28 一屏看全；支持切换字体与字号。「智核」主面板顶部为翻页时钟。</p>
@@ -468,10 +473,10 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
       <section id="widgets" class="wrap" aria-labelledby="widgets-title">
         <div class="sec-head">
           <div>
-            <div class="kicker">04 · 十五个组件</div>
-            <h2 id="widgets-title">十五个组件，都会跟着日程变</h2>
+            <div class="kicker">04 · 十六个组件</div>
+            <h2 id="widgets-title">十六个组件，都会跟着日程变</h2>
           </div>
-          <p class="lead">不是十五个静态展示卡。它们读同一份日程和待办；你在主面板改，桌面上的组件也跟着变。</p>
+          <p class="lead">不是十六个静态展示卡。它们读同一份日程和待办；你在主面板改，桌面上的组件也跟着变。</p>
         </div>
         <div class="gallery">
           <article class="widget-card">
@@ -516,8 +521,6 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <p>项目上线、家人生日、春节；重要日子有数。</p>
             </div>
           </article>
-        </div>
-        <div class="gallery">
           <article class="widget-card">
             <img src="assets/widget-clock-v300.webp" width="350" height="214" alt="UCalendar 世界时钟组件：本地时间、农历，以及伦敦、纽约和东京时间">
             <div class="widget-meta">
@@ -581,8 +584,15 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <p>开学周、单双周和周末自动隐藏；宽窗周网格，窄窗自动切成逐日议程。</p>
             </div>
           </article>
+          <article class="widget-card">
+            <img class="contain" src="assets/widget-clipboard-v320.webp" width="380" height="300" alt="UCalendar 剪贴板历史组件：网址和颜色记录，支持类型筛选、搜索与置顶">
+            <div class="widget-meta">
+              <div class="widget-title"><h3>剪贴板历史</h3><span class="badge pro">Pro</span></div>
+              <p>自动记录文本、图片和文件；类型筛选、全文搜索、置顶与敏感内容打码。</p>
+            </div>
+          </article>
         </div>
-        <p class="gallery-note"><b>Lite 6 个，Pro 另有 9 个。</b>组件支持拖拽、缩放、透明度、置顶和鼠标穿透；首次启用自动排成对齐的列，位置会记住。</p>
+        <p class="gallery-note"><b>Lite 6 个，Pro 另有 10 个。</b>组件支持拖拽、缩放、透明度、置顶和鼠标穿透；首次启用自动排成对齐的列，位置会记住。</p>
       </section>
 
       <section id="boundary" class="wrap" aria-labelledby="boundary-title">
@@ -620,7 +630,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <div class="kicker">06 · 版本</div>
             <h2 id="editions-title">Lite 管好日程，Pro 帮你把一天用透</h2>
           </div>
-          <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、自定义任务栏时钟，以及更多组件、主题和工作区；AI 另含日迹分析师。</p>
+          <p class="lead">两个版本都有 AI 秘书、日程、待办、黄历吉日和本地数据。Pro 多了项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、剪贴板历史、自定义任务栏时钟，以及更多组件、主题和工作区；AI 另含日迹分析师。</p>
         </div>
         <div class="editions">
           <article class="edition">
@@ -635,7 +645,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <li><b>黄历 / 吉日</b> 1900–2100 离线宜忌</li>
             </ul>
             <div class="ed-cta">
-              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.5 MB</small></a>
+              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>9.5 MB</small></a>
               <p class="fine">无广告 · 不登录 · 数据在本机</p>
             </div>
           </article>
@@ -653,12 +663,13 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
               <li><b>每日打卡 + 健康快记</b> 习惯连续、血压 / 体重趋势与提醒</li>
               <li><b>系统监控</b> CPU / 内存 / GPU / 磁盘 / 网络，桌面与任务栏浮层</li>
               <li><b>课程表</b> 开学周、单双周与 20 色课程</li>
+              <li><b>剪贴板历史</b> 文本 / 图片 / 文件，搜索、置顶与敏感打码</li>
               <li><b>任务栏时钟</b> 时钟 / 日期 / 农历 / 天气，样式可自定义</li>
-              <li><b>15</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
+              <li><b>16</b> 个桌面组件 · <b>28</b> 套主题 · 工作区预设</li>
               <li><b>AI 日迹分析师</b> 复盘日迹与日程，找模式</li>
             </ul>
             <div class="ed-cta">
-              <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.1 MB</small></a>
+              <a class="btn light" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>11.2 MB</small></a>
               <p class="fine">20 元起自愿支持 · 不是订阅 · 一次支持长期可用</p>
             </div>
           </article>
@@ -676,9 +687,10 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <tr><td>每日打卡 / 健康快记</td><td>—</td><td class="hot">有</td></tr>
             <tr><td>系统监控</td><td>—</td><td class="hot">桌面 + 任务栏浮层</td></tr>
             <tr><td>课程表</td><td>—</td><td class="hot">有</td></tr>
+            <tr><td>剪贴板历史</td><td>—</td><td class="hot">有</td></tr>
             <tr><td>AI 秘书</td><td>有</td><td class="hot">有 + 日迹分析师</td></tr>
             <tr><td>任务栏时钟</td><td>—</td><td class="hot">自定义样式</td></tr>
-            <tr><td>桌面组件</td><td>6 个</td><td class="hot">15 个</td></tr>
+            <tr><td>桌面组件</td><td>6 个</td><td class="hot">16 个</td></tr>
             <tr><td>主题</td><td>6 套</td><td class="hot">28 套</td></tr>
             <tr><td>工作区预设</td><td>—</td><td class="hot">有</td></tr>
             <tr><td>后续新增功能</td><td>现有功能长期可用</td><td class="hot">优先获得</td></tr>
@@ -694,8 +706,8 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
             <h2 id="download-title">先用起来。觉得值，再支持 Pro</h2>
             <p class="lead">Pro 下载后直接可用，不登录、不弹付费墙；觉得值得，再支持长期使用。Lite 永久免费。</p>
             <div class="cta-row">
-              <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>10.1 MB</small></a>
-              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>8.5 MB</small></a>
+              <a class="btn primary" href="https://github.com/tobaba/UCalendar/releases/latest/download/UCalendar.exe">下载 Pro <small>11.2 MB</small></a>
+              <a class="btn ghost" href="https://github.com/tobaba/ucalendar-lite/releases/latest/download/UCalendar-Lite.exe">下载 Lite <small>9.5 MB</small></a>
             </div>
             <p class="note">Windows 10 / 11；缺 WebView2 首次启动会自动安装。Pro 与 Lite 均使用 <span class="mono">CN=UCalendar Studio</span> 代码签名，SmartScreen 首次仍可能提示，可从 Releases 核对文件大小。</p>
           </div>
@@ -719,7 +731,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
           <h3>常见问题</h3>
           <details>
             <summary>Lite 和 Pro 怎么选？</summary>
-            <p>只要核心日程、月历、天气、番茄钟、倒计时和桌面便签，选 Lite，永久免费。想要项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、每日打卡、系统监控、课程表、世界时钟、秒表、时间进度、项目进度、股票行情、音乐播放、工作区预设和全部 28 套主题，选 Pro。两个版本都带黄历 / 吉日，数据互通。</p>
+            <p>只要核心日程、月历、天气、番茄钟、倒计时和桌面便签，选 Lite，永久免费。想要项目管理、便签管理、日迹、时间册导出、今日节奏、微信机器人、每日打卡、系统监控、课程表、剪贴板历史、世界时钟、秒表、时间进度、项目进度、股票行情、音乐播放、工作区预设和全部 28 套主题，选 Pro。两个版本都带黄历 / 吉日，数据互通。</p>
           </details>
           <details>
             <summary>Lite 有 AI 秘书吗？</summary>
@@ -727,7 +739,7 @@ footer{border-top:1px solid var(--line);padding:20px 0 28px}
           </details>
           <details>
             <summary>Lite 有日迹和时间册吗？</summary>
-            <p>Lite v3.1.0 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页和微信机器人；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
+            <p>Lite v3.2.0 没有日迹、时间册导出和今日节奏，也没有项目管理、便签管理页和微信机器人；这些在 Pro 版里。Lite 仍保留日程、待办、月历、黄历吉日、6 个桌面组件、6 套主题和 AI 秘书。</p>
           </details>
           <details>
             <summary>数据会上传吗？</summary>
